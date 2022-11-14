@@ -1,0 +1,161 @@
+.header_top_div {
+  background-color: #f4f5f5;
+}
+
+.header_top_div_inner {
+  padding-block: 10px;
+}
+
+.header_inner {
+  padding-block: 20px;
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.header_top_address_logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.header_top_address:hover .underline {
+  text-decoration: underline;
+}
+
+.underline {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.header_top_address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.logo {
+  display: inline-block;
+  position: relative;
+  width: 178px;
+  height: 44px;
+}
+
+.logo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.category_btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 100, 24, 0.08);
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category_btn:active {
+  transform: scale(0.95);
+  transition: 0.3s;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 16px;
+  height: 2px;
+  background-color: var(--main-orange);
+}
+
+.category_btn > p {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--main-orange);
+}
+
+.search_div {
+  flex: 1 1 auto;
+  border: 1px solid #ebebeb;
+  display: flex;
+  height: 44px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search_div input:focus {
+  outline: none;
+}
+
+.search_div input {
+  flex: 1 1 auto;
+  padding: 8px 16px;
+  background-color: var(--white);
+  border: none;
+}
+
+.search_btn {
+  width: 110px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #f8f8f8;
+  border: none;
+  border-left: 1px solid #ebebeb;
+  cursor: pointer;
+}
+
+.search_btn:active {
+  transform: none;
+}
+
+.extra_div {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.gap8_div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--black);
+  cursor: pointer;
+  position: relative;
+}
+
+.gap8_div p {
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.bags_products {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--red);
+  position: absolute;
+  top: -14px;
+  left: 8px;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Firs Neue 400", "Roboto Flex", sans-serif;
+  color: var(--white);
+  display: grid;
+  place-items: center;
+}
