@@ -12,8 +12,21 @@ import styles from "./Header.module.css";
 import logo from "../../../media/logo.png";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Header() {
+  const router = useRouter();
+  const pathname = router.pathname;
+  console.log(pathname);
+  useEffect(() => {
+    if (pathname == "/wishes") {
+      console.log("da");
+    } else {
+      console.log("yaq");
+    }
+  });
+
   return (
     <header>
       <div className={styles.header_top_div}>
@@ -64,19 +77,40 @@ export default function Header() {
           <button className={styles.search_btn}>{search}</button>
         </div>
         <div className={styles.extra_div}>
-          <div className={styles.gap8_div}>
+          <Link
+            href="/comparisons"
+            className={
+              pathname == "/comparisons"
+                ? `${styles.gap8div_active} ${styles.gap8_div}`
+                : `${styles.gap8_div}`
+            }
+          >
             {swap}
             <p>Сравнение</p>
-          </div>
-          <div className={styles.gap8_div}>
+          </Link>
+          <Link
+            href="/wishes"
+            className={
+              pathname == "/wishes"
+                ? `${styles.gap8div_active} ${styles.gap8_div}`
+                : `${styles.gap8_div}`
+            }
+          >
             {heart}
             <p>Избранное</p>
-          </div>
-          <div className={styles.gap8_div}>
+          </Link>
+          <Link
+            href="/bag"
+            className={
+              pathname == "/bag"
+                ? `${styles.gap8div_active} ${styles.gap8_div}`
+                : `${styles.gap8_div}`
+            }
+          >
             {bag}
             <span className={styles.bags_products}>99+</span>
             <p>Корзина</p>
-          </div>
+          </Link>
           <div className={styles.gap8_div}>
             {login}
             <p>Войти</p>

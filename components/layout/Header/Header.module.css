@@ -1,6 +1,5 @@
 .header_top_div {
   background-color: #f4f5f5;
-  /* background-color: red; */
 }
 
 .header_top_div_inner {
@@ -149,6 +148,10 @@
   transition: 0.3s;
 }
 
+.gap8div_active {
+  color: var(--main-orange);
+}
+
 .gap8_div p {
   width: 100%;
   font-size: 16px;
@@ -156,15 +159,15 @@
 }
 
 .bags_products {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background-color: var(--red);
   position: absolute;
-  top: -14px;
-  left: 8px;
+  top: -18px;
+  left: 5px;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 16px;
   font-family: "TT Firs Neue", "Roboto Flex", sans-serif;
   color: var(--white);
   display: grid;
@@ -201,7 +204,7 @@
 }
 
 .header_top_phone_number {
-  font-family: "Firs Neue 600";
+  font-family: "TT Firs Neue";
   font-weight: 600;
   color: var(--main-orange);
 }

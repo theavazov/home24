@@ -11,26 +11,6 @@
   --red: #ef3f27;
 }
 
-@font-face {
-  font-family: "Firs Neue 400";
-  src: url("../font/TTFirsNeue-Regular.woff");
-}
-
-@font-face {
-  font-family: "Firs Neue 500";
-  src: url("../font/TTFirsNeue-Medium.woff");
-}
-
-@font-face {
-  font-family: "Firs Neue 600";
-  src: url("../font/TTFirsNeue-DemiBold.woff");
-}
-
-@font-face {
-  font-family: "Firs Neue 700";
-  src: url("../font/TTFirsNeue-Bold.woff");
-}
-
 *,
 *::before,
 *::after {
@@ -165,6 +145,10 @@ button:active {
 .disabled_btn:active,
 .disabled_text_btn:active {
   transform: none;
+}
+
+.page_node {
+  display: flex;
 }
 
 .qr_div {
