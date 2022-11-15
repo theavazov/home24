@@ -42,7 +42,7 @@ export default function Header() {
             </a>
             <select className={styles.langChanger}>
               <option value="ru">Рус</option>
-              <option value="uz">O'zb</option>
+              <option value="uz">O&apos;zb</option>
             </select>
           </nav>
         </div>
