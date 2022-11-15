@@ -3,16 +3,16 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-export default function CategoryPage() {
+export default function BlogPage() {
   const router = useRouter();
-  console.log(router.query.id);
-  const [products, setProducts] = useState([]);
+  console.log(router.query);
+  const [blog, setBlog] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/categories/${router.query.id}`)
+      .get(`http://localhost:3000/blog/${router.query.blog}`)
       .then((res) => {
-        console.log(res.data.products);
-        setProducts(res.data.products);
+        console.log(res.data);
+        setBlog(res.data);
       })
       .catch((err) => console.log(err));
   }, [router]);
@@ -24,9 +24,8 @@ export default function CategoryPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-        {products.map((product) => {
-          return <p key={product.id}>{product.name}</p>;
-        })}
+        <p>Blog</p>
+        <p>{blog.title}</p>
       </div>
     </div>
   );

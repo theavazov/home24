@@ -4,6 +4,10 @@
 
 .header_top_div_inner {
   padding-block: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .header_inner {
@@ -136,6 +140,12 @@
   color: var(--black);
   cursor: pointer;
   position: relative;
+  transition: 0.3s;
+}
+
+.gap8_div:hover {
+  color: var(--main-orange);
+  transition: 0.3s;
 }
 
 .gap8_div p {
@@ -154,8 +164,56 @@
   left: 8px;
   font-size: 12px;
   line-height: 20px;
-  font-family: "Firs Neue 400", "Roboto Flex", sans-serif;
+  font-family: "TT Firs Neue", "Roboto Flex", sans-serif;
   color: var(--white);
   display: grid;
   place-items: center;
+}
+
+.header_top_nav {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.header_top_link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray);
+  transition: 0.3s;
+}
+
+.header_top_link:hover {
+  color: var(--main-orange);
+  transition: 0.3s;
+}
+
+.header_top_link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header_top_link span {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.header_top_phone_number {
+  font-family: "Firs Neue 600";
+  font-weight: 600;
+  color: var(--main-orange);
+}
+
+.langChanger {
+  border: none;
+  background-color: unset;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.langChanger:focus {
+  outline: none;
 }

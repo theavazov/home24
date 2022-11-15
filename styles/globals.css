@@ -22,6 +22,11 @@
 }
 
 @font-face {
+  font-family: "Firs Neue 600";
+  src: url("../font/TTFirsNeue-DemiBold.woff");
+}
+
+@font-face {
   font-family: "Firs Neue 700";
   src: url("../font/TTFirsNeue-Bold.woff");
 }
@@ -32,7 +37,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto Flex", "Inter", sans-serif;
+  font-family: "TT Firs Neue", "Roboto Flex", "Inter", sans-serif;
 }
 
 a {
@@ -59,29 +64,36 @@ main {
 }
 
 .page_main_title {
-  font-family: "Firs Neue 500", "Roboto Flex", sans-serif;
+  font-family: "TT Firs Neue", "Roboto Flex", sans-serif;
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
 }
 
 .category_title {
-  font-family: "Firs Neue 500", "Roboto Flex", sans-serif;
+  font-family: "TT Firs Neue", "Roboto Flex", sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 48px;
 }
 
 .category_view_all {
-  font-family: "Firs Neue 400", "Roboto Flex", sans-serif;
+  font-family: "TT Firs Neue", "Roboto Flex", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   color: var(--main-orange);
+  margin-bottom: 7px;
 }
 
 .category_view_all:hover {
   text-decoration: underline;
+}
+
+.titles_div {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
 }
 
 .primary_btn {
@@ -178,4 +190,8 @@ button:active {
   line-height: 24px;
   color: var(--gray);
   width: 100%;
+}
+
+.section {
+  margin-top: 120px;
 }

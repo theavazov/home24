@@ -1,4 +1,13 @@
-import { bag, heart, location, login, search, swap } from "../../icons/icons";
+import {
+  bag,
+  heart,
+  instagram,
+  location,
+  login,
+  search,
+  swap,
+  telegram,
+} from "../../icons/icons";
 import styles from "./Header.module.css";
 import logo from "../../../media/logo.png";
 import Link from "next/link";
@@ -16,7 +25,26 @@ export default function Header() {
             </div>
             <p className={styles.underline}>Ташкент</p>
           </a>
-          <nav className={styles.header_top_nav}></nav>
+          <nav className={styles.header_top_nav}>
+            <a href="#" className={styles.header_top_link}>
+              {instagram}
+              <span>home24.uz</span>
+            </a>
+            <a href="#" className={styles.header_top_link}>
+              {telegram}
+              <span>t.me/home24uz</span>
+            </a>
+            <a
+              href="tel:+998712007002"
+              className={styles.header_top_phone_number}
+            >
+              +998 71 200 7 002
+            </a>
+            <select className={styles.langChanger}>
+              <option value="ru">Рус</option>
+              <option value="uz">O'zb</option>
+            </select>
+          </nav>
         </div>
       </div>
       <div className={`container ${styles.header_inner}`}>

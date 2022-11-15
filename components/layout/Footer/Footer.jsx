@@ -12,7 +12,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <div className={`container ${styles.footer_inner}`}>
         <div className={styles.footer_top}>
           <div className={styles.footer_top_div}>
