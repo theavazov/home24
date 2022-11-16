@@ -13,19 +13,23 @@ import logo from "../../../media/logo.png";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import { LoginContext } from "../../../contexts/LoginContext";
+import { UserContext } from "../../../contexts/UserContext";
 
 export default function Header() {
   const router = useRouter();
   const pathname = router.pathname;
-  console.log(pathname);
+
+  const { setIsModal } = useContext(LoginContext);
+  const { user } = useContext(UserContext);
+  const [isUser, setIsUser] = useState(false);
   useEffect(() => {
-    if (pathname == "/wishes") {
-      console.log("da");
-    } else {
-      console.log("yaq");
+    const storageUser = JSON.parse(localStorage.getItem("user"));
+    if (storageUser !== null) {
+      setIsUser(true);
     }
-  });
+  }, []);
 
   return (
     <header>
@@ -100,9 +104,9 @@ export default function Header() {
             <p>Избранное</p>
           </Link>
           <Link
-            href="/bag"
+            href="/cart/"
             className={
-              pathname == "/bag"
+              pathname.includes("cart")
                 ? `${styles.gap8div_active} ${styles.gap8_div}`
                 : `${styles.gap8_div}`
             }
@@ -111,12 +115,35 @@ export default function Header() {
             <span className={styles.bags_products}>99+</span>
             <p>Корзина</p>
           </Link>
-          <div className={styles.gap8_div}>
-            {login}
-            <p>Войти</p>
-          </div>
+          {isUser ? (
+            <UserLink user={user} />
+          ) : (
+            <ModalOpener setIsModal={setIsModal} />
+          )}
         </div>
       </div>
     </header>
   );
 }
+
+const UserLink = ({ user }) => {
+  return (
+    <Link href="/profile" className={styles.gap8_div}>
+      {login}
+      <p>{user.name}</p>
+    </Link>
+  );
+};
+
+const ModalOpener = ({ setIsModal }) => {
+  return (
+    <div
+      role={"button"}
+      onClick={() => setIsModal(true)}
+      className={styles.gap8_div}
+    >
+      {login}
+      <p>Войти</p>
+    </div>
+  );
+};

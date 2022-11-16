@@ -3,29 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Herobanner from "../components/Home/HeroBanner/HeroBanner";
 import Layout from "../components/layout/Layout";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const [categories, setCategories] = useState([]);
-  const [blog, setBlog] = useState([]);
-  // const [feedbacks, setFeedbacks] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/categories")
-      .then((res) => setCategories(res.data))
-      .catch((err) => console.log(err));
-
-    axios
-      .get("http://localhost:3000/blog")
-      .then((res) => {
-        console.log(res.data);
-        setBlog(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
   return (
     <>
       <Head>
@@ -34,17 +16,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section>
-          <div className="container">
-            <p className="page_main_title">Список сравнения</p>
-            <p className="category_title">Популярные категории</p>
-            <a href="#" className="category_view_all">
-              Все товары
-            </a>
+        <Herobanner />
+        <section className="section">
+          <div className={`container`}>
+            <div className="titles_div">
+              <p className="category_title">Популярные категории</p>
+              <Link href="#" className="category_view_all">
+                Все товары
+              </Link>
+            </div>
             <div className={styles.categories_container}>
-              {categories.map((category) => {
-                return <Category key={category.id} category={category} />;
-              })}
+              <div className={styles.category}></div>
+              <div className={styles.category}></div>
+              <div className={styles.category}></div>
             </div>
           </div>
         </section>
@@ -56,11 +40,7 @@ export default function Home() {
                 Все блоги
               </Link>
             </div>
-            <div className={styles.blog_container}>
-              {blog.map((blog) => {
-                return <Blog key={blog.id} blog={blog} />;
-              })}
-            </div>
+            <div className={styles.blog_container}></div>
           </div>
         </section>
       </Layout>

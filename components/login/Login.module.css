@@ -1,0 +1,103 @@
+@keyframes popUp {
+  from {
+    transform: translateX(-300%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.loginModal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+  z-index: 10;
+}
+
+.loginContent {
+  max-width: 590px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  animation: popUp 0.8s ease;
+}
+
+.loginContent_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 40px;
+  background-color: var(--bg-gray);
+}
+
+.loginContent_headerText {
+  width: 100%;
+  font-family: "TT Firs Neue";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--black);
+}
+
+.loginCloser {
+  max-width: 32px;
+  width: 100%;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.loginCloser span:first-child {
+  transform: rotate(45deg);
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+.loginCloser span:last-child {
+  transform: rotate(-45deg);
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+.login_form {
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.label_inp_div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label_inp_div label {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray);
+  transition: 0.3s;
+}
+
+.label_inp_div input {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black);
+  padding: 16px;
+  border: 1px solid #ebebeb;
+  background-color: unset;
+}
+
+.label_inp_div_red input {
+  border: 1px solid var(--red);
+}

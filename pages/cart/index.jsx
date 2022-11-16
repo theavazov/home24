@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Layout from "../components/layout/Layout";
+import Link from "next/link";
+import Layout from "../../components/layout/Layout";
 
-export default function Bag() {
+export default function Cart() {
   return (
     <>
       <Head>
@@ -12,6 +13,7 @@ export default function Bag() {
         <div className="container">
           <p className="page_main_title">Корзина</p>
         </div>
+        <Link href="/cart/checkout">Oformleniye</Link>
       </Layout>
     </>
   );
