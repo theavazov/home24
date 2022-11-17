@@ -1,15 +1,25 @@
-import { useContext } from "react";
+import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../../contexts/LoginContext";
 import LoginModal from "../login/Login";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
 export default function Layout({ children }) {
+  const router = useRouter();
+  const [isHome, setIsHome] = useState(true);
   const { isModal } = useContext(LoginContext);
+
+  useEffect(() => {
+    if (router.pathname !== "/") {
+      setIsHome(false);
+    }
+  }, []);
+
   return (
     <div id="app">
       <Header />
-      <main>{children}</main>
+      <main className={isHome ? "" : "main"}>{children}</main>
       <Footer />
       {isModal && <LoginModal />}
     </div>

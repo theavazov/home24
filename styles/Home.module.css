@@ -9,7 +9,14 @@
 .category {
   width: 100%;
   background-color: var(--bg-gray);
-  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+  color: var(--black);
+  transition: 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .category_image {
@@ -27,11 +34,17 @@
   object-fit: contain;
 }
 
-.blog_container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 24px;
+.category_name {
+  font-family: "TT Firs Neue", sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  color: currentColor;
+  text-align: center;
+}
+
+.category:hover {
+  color: var(--main-orange);
+  transition: 0.3s;
 }
 
 .blog {

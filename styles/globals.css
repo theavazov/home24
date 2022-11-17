@@ -35,6 +35,10 @@ main {
   flex: 1 1 auto;
 }
 
+.main {
+  padding-top: 32px;
+}
+
 .container {
   max-width: 1640px;
   width: 100%;
@@ -77,6 +81,7 @@ main {
 }
 
 .primary_btn {
+  display: inline-block;
   padding: 16px 24px;
   border-radius: 6px;
   background-color: var(--main-orange);
@@ -92,6 +97,7 @@ main {
 }
 
 .secondary_btn {
+  display: inline-block;
   padding: 16px 24px;
   border-radius: 6px;
   background-color: unset;
@@ -109,6 +115,7 @@ main {
 }
 
 .disabled_btn {
+  display: inline-block;
   padding: 16px 24px;
   border-radius: 6px;
   background-color: #dcdcdc;
@@ -119,6 +126,7 @@ main {
 }
 
 .text_btn {
+  display: inline-block;
   color: var(--main-orange);
   border: none;
   padding: 16px 24px;
@@ -173,6 +181,7 @@ button:active {
   font-size: 18px;
   line-height: 24px;
   color: var(--gray);
+  max-width: 280px;
   width: 100%;
 }
 
@@ -220,4 +229,149 @@ button:active {
   height: 8px;
   background-color: var(--light-orange) !important;
   transition: 0.3s !important;
+}
+
+.blog_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* === 404 === */
+.error_container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorImage {
+  position: relative;
+  max-width: 860px;
+  width: 100%;
+  height: 570px;
+  margin: 0 auto;
+}
+
+.errorImage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.error_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.error_texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.error_desc {
+  font-family: "TT Firs Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray);
+  text-align: center;
+}
+
+.error_title {
+  font-family: "TT Firs Neue", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 48px;
+  color: #000;
+  text-align: center;
+  max-width: 600px;
+}
+
+.grid6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+  margin-top: 24px;
+  transition: 1s;
+}
+
+.products_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 24px;
+  row-gap: 48px;
+  margin-top: 32px;
+}
+
+.brand {
+  width: 100%;
+  padding: 8px 50px;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.brand_img {
+  position: relative;
+  width: 100%;
+  height: 120px;
+}
+
+.brand_img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main_flex_content {
+  display: flex;
+  gap: 24px;
+}
+
+.main_text_content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#mainContent .container {
+  padding-inline: 0px;
+}
+
+.page_node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page_node_element {
+  font-family: "TT Firs Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray);
+  transition: 0.3s;
+}
+
+a.page_node_element:hover {
+  color: var(--main-orange);
+  transition: 0.3s;
+}
+
+.page_node_element.active {
+  color: var(--main-orange);
 }

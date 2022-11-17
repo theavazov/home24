@@ -2,31 +2,44 @@ import axios from "axios";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { Blog } from "..";
+import Layout from "../../components/layout/Layout";
+import MiddleText from "../../components/middleText/MiddleText";
 
-export default function BlogPage() {
-  const router = useRouter();
-  console.log(router.query);
-  const [blog, setBlog] = useState({});
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3000/blog/${router.query.blog}`)
-      .then((res) => {
-        console.log(res.data);
-        setBlog(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, [router]);
+export default function DynamicBlogPage() {
+  // const router = useRouter();
+  // console.log(router.query);
+  // const [blog, setBlog] = useState({});
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:3000/blog/${router.query.blog}`)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setBlog(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [router]);
   return (
     <div>
       <Head>
-        <title>Product</title>
-        <meta name="description" content="Home24 - barcha uchun!" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Nechinchidir Blog</title>
       </Head>
-      <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-        <p>Blog</p>
-        <p>{blog.title}</p>
-      </div>
+      <Layout>
+        <section className="section">
+          <div className="container">
+            <div className="titles_div">
+              <p className="page_main_title">Другие блоги</p>
+            </div>
+            <div className="blog_container">
+              <Blog />
+              <Blog />
+              <Blog />
+              <Blog />
+            </div>
+          </div>
+        </section>
+        <MiddleText />
+      </Layout>
     </div>
   );
 }

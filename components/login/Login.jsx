@@ -76,7 +76,8 @@ export default function LoginModal() {
               }}
               type="text"
               id="phone"
-              mask={"+998 (00) 000 00 00"}
+              // +998 ni srazi qoyb beriw kere
+              mask={"(00) 000 00 00"}
               placeholder="+998 (__) ___ __ __"
               className={
                 isValidate ? "" : "animate__animated animate__headShake"

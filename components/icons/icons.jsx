@@ -238,3 +238,21 @@ export const search = (
     />
   </svg>
 );
+
+export const arrowRight = (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.66669 3.33366L10.3334 8.00033L5.66669 12.667"
+      stroke="currentColor  "
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
