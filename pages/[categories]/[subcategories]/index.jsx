@@ -5,6 +5,7 @@ import FullBanner from "../../../components/fullBanner/FullBanner";
 import { arrowRight } from "../../../components/icons/icons";
 import Layout from "../../../components/layout/Layout";
 import MiddleText from "../../../components/middleText/MiddleText";
+import { Product } from "../../../components/Product/Product";
 
 export default function SubcategoryPage() {
   return (
@@ -31,6 +32,14 @@ export default function SubcategoryPage() {
                 </div>
                 <p className="page_main_title">Геймерские кресла </p>
               </div>
+              <section className="products_grid">
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+              </section>
             </div>
           </div>
         </section>

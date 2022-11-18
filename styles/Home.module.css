@@ -6,47 +6,6 @@
   margin-top: 24px;
 }
 
-.category {
-  width: 100%;
-  background-color: var(--bg-gray);
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  gap: 20px;
-  color: var(--black);
-  transition: 0.3s;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.category_image {
-  position: relative;
-  width: 200px;
-  height: 150px;
-}
-
-.category_image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.category_name {
-  font-family: "TT Firs Neue", sans-serif;
-  font-size: 20px;
-  line-height: 28px;
-  color: currentColor;
-  text-align: center;
-}
-
-.category:hover {
-  color: var(--main-orange);
-  transition: 0.3s;
-}
-
 .blog {
   height: 280px;
   width: 100%;

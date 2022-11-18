@@ -5,12 +5,12 @@ import Herobanner from "../components/Home/HeroBanner/HeroBanner";
 import Layout from "../components/layout/Layout";
 import styles from "../styles/Home.module.css";
 
-import mebel from "../media/mebel-category-image.png";
 import blogImage from "../media/blog-image.jpeg";
 import FullBanner from "../components/fullBanner/FullBanner";
 import brand from "../media/brand.png";
 import { Product } from "../components/Product/Product";
 import { useState } from "react";
+import { Category } from "../components/Category/Category";
 
 export default function Home() {
   return (
@@ -99,19 +99,6 @@ export default function Home() {
     </>
   );
 }
-
-export const Category = ({ category }) => {
-  return (
-    <Link href="/dynamic" className={styles.category}>
-      <div className={styles.category_img}>
-        <Image src={mebel} alt="category mebel" />
-      </div>
-      <div className={styles.category_content}>
-        <p className={styles.category_name}>Мебель</p>
-      </div>
-    </Link>
-  );
-};
 
 export const Blog = ({ blog }) => {
   return (

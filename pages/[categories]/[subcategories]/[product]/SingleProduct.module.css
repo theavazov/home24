@@ -1,0 +1,113 @@
+.product_main_div {
+  border: 1px solid red;
+  margin-top: 32px;
+  display: flex;
+  gap: 24px;
+}
+
+.product_info_container {
+  width: 100%;
+  border: 1px solid green;
+}
+
+.product_buy_container {
+  max-width: 415px;
+  width: 100%;
+}
+
+.sticky_options {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.option_div {
+  width: 100%;
+  padding: 24px 35px;
+  border: 1px solid #f9f9f9;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.option_div_container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.svg_div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.svg_div button {
+  background-color: unset;
+  display: grid;
+  place-items: center;
+  border: none;
+}
+
+.svg_div svg:hover {
+  color: var(--main-orange);
+  transition: 0.3s;
+}
+
+.svg_div svg {
+  transition: 0.3s;
+}
+
+.svg_div button.active {
+  color: var(--main-orange);
+}
+
+.prices_div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.current_price {
+  font-family: "TT Firs Neue", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.old_price {
+  font-family: "TT Firs Neue", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #5d5d5f;
+  text-decoration-line: line-through;
+}
+
+.option_div_btns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.other_options_div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.other_option {
+  width: 100%;
+  padding: 24px;
+  border: 1px solid #f2f2fa;
+  border-radius: 8px;
+  overflow: hidden;
+}

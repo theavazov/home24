@@ -11,6 +11,15 @@
   --red: #ef3f27;
 }
 
+/* ::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-orange);
+  border-radius: 20px;
+} */
+
 *,
 *::before,
 *::after {
@@ -81,7 +90,10 @@ main {
 }
 
 .primary_btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   padding: 16px 24px;
   border-radius: 6px;
   background-color: var(--main-orange);
@@ -97,7 +109,10 @@ main {
 }
 
 .secondary_btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   padding: 16px 24px;
   border-radius: 6px;
   background-color: unset;
