@@ -1,26 +1,35 @@
 import Image from "next/image";
 import styles from "./ProductSwiper.module.css";
 import kreslo from "../../../media/kreslo-gamer.png";
+import kresloOfis from "../../../media/kresl-ofis.png";
 import { chat, star } from "../../icons/icons";
+import { useState } from "react";
 
 export default function ProductSwiper() {
+  const [src, setSrc] = useState(1);
+  // const [source, setSource] = useState(kreslo);
+  const [count, setCount] = useState(0);
+  const onSourceClick = (e) => {
+    setSrc(index);
+    // console.log(e.target.src);
+    // setSource(e.target.src);
+  };
   return (
     <div className={styles.productSwiper}>
       <div className={styles.swipers_container}>
         <aside className={styles.aside_swiper_container}>
           <div className={styles.overflowY_scrol}>
-            <AsideSwiper />
-            <AsideSwiper />
-            <AsideSwiper />
-            <AsideSwiper />
-            <AsideSwiper />
-            <AsideSwiper />
-            <AsideSwiper />
+            <AsideSwiper setSrc={setSrc} />
+            <AsideSwiper2 setSrc={setSrc} />
           </div>
         </aside>
-        <article className={styles.single_swiper}>
-          <Image src={kreslo} alt="kreslo" />
-        </article>
+        <div className={styles.single_swiper}>
+          <Image
+            src={src === 1 ? kreslo : src === 2 ? kresloOfis : ""}
+            alt="kreslo"
+            fill
+          />
+        </div>
       </div>
       <div className={styles.product_info_container}>
         <div className={styles.product_info_top}>
@@ -49,9 +58,13 @@ export default function ProductSwiper() {
           <p>Количество:</p>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             <div className={styles.buy_btn_div}>
-              <button>-</button>
-              <span>1</span>
-              <button>+</button>
+              <button
+                onClick={() => (count - 1 >= 0 ? setCount(count - 1) : count)}
+              >
+                -
+              </button>
+              <span>{count}</span>
+              <button onClick={() => setCount(count + 1)}>+</button>
             </div>
             <p>Осталось всего 4</p>
           </div>
@@ -70,10 +83,26 @@ const KeyValue = () => {
   );
 };
 
-const AsideSwiper = () => {
+const AsideSwiper = ({ setSrc }) => {
   return (
-    <div className={styles.aside_swiper}>
-      <Image src={kreslo} alt="aside swiper" />
+    <div
+      role={"button"}
+      className={styles.aside_swiper}
+      onClick={() => setSrc(1)}
+    >
+      <Image src={kreslo} alt="aside swiper" fill />
+    </div>
+  );
+};
+
+const AsideSwiper2 = ({ setSrc }) => {
+  return (
+    <div
+      role={"button"}
+      className={styles.aside_swiper}
+      onClick={() => setSrc(2)}
+    >
+      <Image src={kresloOfis} alt="aside swiper" fill />
     </div>
   );
 };

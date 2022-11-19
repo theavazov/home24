@@ -14,7 +14,7 @@ export default function Layout({ children }) {
     if (router.pathname !== "/") {
       setIsHome(false);
     }
-  }, []);
+  }, [router.pathname]);
 
   return (
     <div id="app">

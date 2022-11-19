@@ -269,7 +269,7 @@ export const cart = (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M7.4222 19.8203C7.8442 19.8203 8.1872 20.1633 8.1872 20.5853C8.1872 21.0073 7.8442 21.3493 7.4222 21.3493C7.0002 21.3493 6.6582 21.0073 6.6582 20.5853C6.6582 20.1633 7.0002 19.8203 7.4222 19.8203Z"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -278,21 +278,21 @@ export const cart = (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M18.6752 19.8203C19.0972 19.8203 19.4402 20.1633 19.4402 20.5853C19.4402 21.0073 19.0972 21.3493 18.6752 21.3493C18.2532 21.3493 17.9102 21.0073 17.9102 20.5853C17.9102 20.1633 18.2532 19.8203 18.6752 19.8203Z"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M2.75 3.25L4.83 3.61L5.793 15.083C5.871 16.018 6.652 16.736 7.59 16.736H18.502C19.398 16.736 20.158 16.078 20.287 15.19L21.236 8.632C21.353 7.823 20.726 7.099 19.909 7.099H5.164"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M14.126 10.7949H16.899"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -476,6 +476,72 @@ export const star = (
       clipRule="evenodd"
       d="M8.47641 2.29389L10.0204 5.39989C10.0977 5.55655 10.2471 5.66589 10.4204 5.69122L13.8771 6.19055C14.0171 6.20922 14.1431 6.28255 14.2291 6.39455C14.3904 6.60455 14.3657 6.90189 14.1724 7.08255L11.6671 9.50522C11.5397 9.62522 11.4831 9.80122 11.5164 9.97255L12.1164 13.3912C12.1584 13.6746 11.9651 13.9399 11.6817 13.9859C11.5644 14.0039 11.4444 13.9852 11.3377 13.9326L8.25908 12.3186C8.10441 12.2346 7.91908 12.2346 7.76441 12.3186L4.66308 13.9412C4.40374 14.0732 4.08641 13.9752 3.94508 13.7212C3.89108 13.6186 3.87241 13.5019 3.89108 13.3879L4.49108 9.96922C4.52108 9.79855 4.46441 9.62322 4.34041 9.50255L1.82174 7.08055C1.61641 6.87655 1.61508 6.54455 1.81974 6.33922C1.82041 6.33855 1.82108 6.33722 1.82174 6.33655C1.90641 6.25989 2.01041 6.20855 2.12308 6.18855L5.58041 5.68922C5.75308 5.66189 5.90174 5.55389 5.98041 5.39722L7.52308 2.29389C7.58508 2.16789 7.69508 2.07122 7.82841 2.02722C7.96241 1.98255 8.10908 1.99322 8.23508 2.05655C8.33841 2.10789 8.42308 2.19122 8.47641 2.29389Z"
       fill="#F6C65C"
+    />
+  </svg>
+);
+
+export const logout = (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.4131 6.31159V5.56519C12.4131 3.93719 11.0931 2.61719 9.46512 2.61719H5.56512C3.93792 2.61719 2.61792 3.93719 2.61792 5.56519V14.4692C2.61792 16.0972 3.93792 17.4172 5.56512 17.4172H9.47312C11.0963 17.4172 12.4131 16.1012 12.4131 14.478V13.7236"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M17.8479 10.0172H8.21509"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M15.5054 7.68555L17.8478 10.0175L15.5054 12.3503"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const edit = (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.13306 13.2669H13.3844"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.56997 3.30439C9.06131 2.67839 9.85531 2.71106 10.482 3.20239L11.4086 3.92906C12.0353 4.42039 12.2573 5.18239 11.766 5.80972L6.23997 12.8597C6.05531 13.0957 5.77331 13.2351 5.47331 13.2384L3.34197 13.2657L2.85931 11.1891C2.79131 10.8977 2.85931 10.5911 3.04397 10.3544L8.56997 3.30439Z"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.53516 4.625L10.7312 7.13033"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

@@ -126,6 +126,7 @@ main {
 .secondary_btn:hover {
   background-color: #ffe7db;
   border: 1px solid #ffe7db;
+  /* box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15); */
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
 }
@@ -151,12 +152,20 @@ main {
   transition: 0.3s;
 }
 
+.text_btn:hover {
+  text-decoration: underline;
+}
+
 .disabled_text_btn {
   color: #6c6c6c;
   border: none;
   padding: 16px 24px;
   background-color: unset;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button {
   transition: 0.3s;
 }
 
@@ -331,9 +340,26 @@ button:active {
   transition: 1s;
 }
 
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+  margin-top: 24px;
+  transition: 1s;
+}
+
 .products_grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  column-gap: 24px;
+  row-gap: 48px;
+  margin-top: 32px;
+}
+
+.products_grid_5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 24px;
   row-gap: 48px;
   margin-top: 32px;

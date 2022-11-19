@@ -12,11 +12,11 @@ export default function LoginModal() {
   const { setUser } = useContext(UserContext);
   const numberRef = useRef();
 
-  const [number, setNumber] = useState("+998 ");
+  const [number, setNumber] = useState("");
   const [isValidate, setIsValidate] = useState(true);
 
   const saveUser = () => {
-    if (number == "+998 (99) 121 28 21") {
+    if (number == "(99) 121 28 21") {
       const user = {
         name: "Admin",
         number: number,
@@ -42,7 +42,7 @@ export default function LoginModal() {
         setIsModal(true);
       }
     });
-  }, []);
+  }, [setIsModal]);
   return (
     <div className={styles.loginModal}>
       <div className={styles.loginContent}>
@@ -68,21 +68,23 @@ export default function LoginModal() {
             }
           >
             <label htmlFor="phone">Номер телефонa</label>
-            <IMaskInput
-              ref={numberRef}
-              value={number}
-              onChange={(e) => {
-                setNumber(e.target.value);
-              }}
-              type="text"
-              id="phone"
-              // +998 ni srazi qoyb beriw kere
-              mask={"+998 (00) 000 00 00"}
-              placeholder="+998 (__) ___ __ __"
-              className={
-                isValidate ? "" : "animate__animated animate__headShake"
-              }
-            />
+            <div className={styles.yolgon_input}>
+              <span>+998</span>
+              <IMaskInput
+                ref={numberRef}
+                value={number}
+                onChange={(e) => {
+                  setNumber(e.target.value);
+                }}
+                type="text"
+                id="phone"
+                mask={"(00) 000 00 00"}
+                placeholder="(__) ___ __ __"
+                className={
+                  isValidate ? "" : "animate__animated animate__headShake"
+                }
+              />
+            </div>
           </div>
           <button type="button" className="primary_btn" onClick={saveUser}>
             Войти

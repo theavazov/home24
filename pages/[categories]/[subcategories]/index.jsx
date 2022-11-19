@@ -10,7 +10,7 @@ import Product from "../../../components/Product/Product";
 import styles from "./Subcategories.module.css";
 
 export default function SubcategoryPage() {
-  const [isGrid, setIsGrid] = useState(true);
+  const [isGrid, setIsGrid] = useState(false);
   return (
     <>
       <Head>
@@ -45,7 +45,7 @@ export default function SubcategoryPage() {
                 <div className={styles.grid_btn_div}>
                   <button
                     onClick={() => setIsGrid(!isGrid)}
-                    className={isGrid ? styles.active : ""}
+                    className={isGrid ? "" : styles.active}
                     style={{
                       background: "none",
                       border: "none",
@@ -58,7 +58,7 @@ export default function SubcategoryPage() {
                   </button>
                   <button
                     onClick={() => setIsGrid(!isGrid)}
-                    className={isGrid ? "" : styles.active}
+                    className={isGrid ? styles.active : ""}
                     style={{
                       background: "none",
                       border: "none",
@@ -71,14 +71,14 @@ export default function SubcategoryPage() {
                   </button>
                 </div>
               </div>
-              <section className={isGrid ? "products_grid" : "grid4"}>
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
+              <section className={isGrid ? "grid3" : "products_grid_5"}>
+                <Product isGrid={isGrid} />
+                <Product isGrid={isGrid} />
+                <Product isGrid={isGrid} />
+                <Product isGrid={isGrid} />
+                <Product isGrid={isGrid} />
+                <Product isGrid={isGrid} />
+                <Product isGrid={isGrid} />
               </section>
               <MiddleText />
             </div>

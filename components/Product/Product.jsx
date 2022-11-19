@@ -5,10 +5,10 @@ import styles from "./Product.module.css";
 import kreslo from "../../media/kresl-ofis.png";
 import { cart, star } from "../icons/icons";
 
-export default function Product() {
+export default function Product({ isGrid }) {
   return (
     <Link href="/dynamic/gamer/kreslo" className={styles.product}>
-      <div className={styles.product_img}>
+      <div className={isGrid ? styles.product_img_big : styles.product_img}>
         <Image src={kreslo} alt="Kreslo" />
       </div>
       <div className={styles.product_info}>
