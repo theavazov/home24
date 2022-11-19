@@ -3,7 +3,7 @@ import styles from "./Category.module.css";
 import mebel from "../../media/mebel-category-image.png";
 import Image from "next/image";
 
-export const Category = () => {
+export default function Category() {
   return (
     <Link href="/dynamic" className={styles.category}>
       <div className={styles.category_img}>
@@ -14,4 +14,4 @@ export const Category = () => {
       </div>
     </Link>
   );
-};
+}

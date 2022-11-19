@@ -27,6 +27,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "TT Firs Neue", "Roboto Flex", "Inter", sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -315,6 +316,15 @@ button:active {
 .grid6 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+  margin-top: 24px;
+  transition: 1s;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 24px;
   row-gap: 32px;
   margin-top: 24px;

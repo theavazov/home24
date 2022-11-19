@@ -1,13 +1,15 @@
 .product_main_div {
-  border: 1px solid red;
   margin-top: 32px;
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .product_info_container {
   width: 100%;
-  border: 1px solid green;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
 }
 
 .product_buy_container {
@@ -16,8 +18,6 @@
 }
 
 .sticky_options {
-  position: sticky;
-  top: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -53,6 +53,12 @@
   display: grid;
   place-items: center;
   border: none;
+}
+
+.option_div_btns button span {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
 }
 
 .svg_div svg:hover {
@@ -110,4 +116,59 @@
   border: 1px solid #f2f2fa;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.other_option:hover {
+  border: 1px solid var(--main-orange);
+  transition: 0.3s;
+}
+
+.other_option_title {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  color: var(--black);
+  border-bottom: 1px dashed var(--black);
+  width: fit-content;
+}
+
+.other_option_desc {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray);
+  max-width: 185px;
+}
+
+.other_option:first-child img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 190px;
+  height: 90px;
+}
+
+.other_option:last-child img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 110px;
+  height: 150px;
+}
+
+.estvoprosi {
+  font-family: "Inter", sans-serif;
+  text-transform: lowercase;
+  font-size: 14px;
+  line-height: 24px;
+  color: #ff6418;
+}
+
+.estvoprosi:hover {
+  text-decoration: underline;
 }

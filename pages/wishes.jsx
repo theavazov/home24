@@ -5,7 +5,7 @@ import { arrowRight } from "../components/icons/icons";
 import Layout from "../components/layout/Layout";
 import MiddleText from "../components/middleText/MiddleText";
 import { NoneComponent } from "../components/NoneComponent/NoneComponent";
-import { Product } from "../components/Product/Product";
+import Product from "../components/Product/Product";
 import image from "../media/wishes-img.png";
 
 export default function Wishes() {

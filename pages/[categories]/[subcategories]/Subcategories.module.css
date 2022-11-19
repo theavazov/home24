@@ -1,0 +1,13 @@
+.grid_btn_div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.grid_btn_div button {
+  color: var(--black);
+}
+
+.grid_btn_div button.active {
+  color: var(--main-orange);
+}

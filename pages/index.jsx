@@ -4,13 +4,11 @@ import Link from "next/link";
 import Herobanner from "../components/Home/HeroBanner/HeroBanner";
 import Layout from "../components/layout/Layout";
 import styles from "../styles/Home.module.css";
-
 import blogImage from "../media/blog-image.jpeg";
 import FullBanner from "../components/fullBanner/FullBanner";
 import brand from "../media/brand.png";
-import { Product } from "../components/Product/Product";
-import { useState } from "react";
-import { Category } from "../components/Category/Category";
+import Product from "../components/Product/Product";
+import Category from "../components/Category/Category";
 
 export default function Home() {
   return (
@@ -67,8 +65,6 @@ export default function Home() {
               </Link>
             </div>
             <div className="products_grid">
-              <Product />
-              <Product />
               <Product />
               <Product />
               <Product />

@@ -2,15 +2,12 @@ import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import AsideNav from "../../components/AsideNav/AsideNav";
-import { Category } from "../../components/Category/Category";
 import FullBanner from "../../components/fullBanner/FullBanner";
 import { arrowRight } from "../../components/icons/icons";
 import Layout from "../../components/layout/Layout";
 import MiddleText from "../../components/middleText/MiddleText";
-import { Product } from "../../components/Product/Product";
+import Product from "../../components/Product/Product";
 import mebel from "../../media/mebel-category-image.png";
 import styles from "./Test.module.css";
 
