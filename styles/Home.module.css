@@ -32,3 +32,9 @@
   object-fit: cover;
   z-index: -1;
 }
+
+@media (max-width: 880px) {
+  .blog {
+    padding: 16px;
+  }
+}

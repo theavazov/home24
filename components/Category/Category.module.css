@@ -38,3 +38,17 @@
   color: var(--main-orange);
   transition: 0.3s;
 }
+
+@media (max-width: 880px) {
+  .category {
+    gap: 12px;
+    padding: 12px;
+  }
+  .category_img {
+    height: 60px;
+  }
+  .category_name {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

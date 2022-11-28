@@ -39,3 +39,14 @@
   overflow: hidden;
   padding: 30px;
 }
+
+@media (max-width: 880px) {
+  .herobanner_inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .productOfTheDay_swiper,
+  .mainBanner_swiper {
+    max-width: 100%;
+  }
+}

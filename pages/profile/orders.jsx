@@ -5,6 +5,8 @@ import { arrowRight } from "../../components/icons/icons";
 import Layout from "../../components/layout/Layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
 import styles from "./Profile.module.css";
+import ordersImage from "../../media/active_orders.png";
+import Image from "next/image";
 
 export default function Orders() {
   return (
@@ -33,7 +35,9 @@ export default function Orders() {
           <div className="container">
             <div className={styles.main_content}>
               <ProfileNav />
-              <div className={styles.profile_div}></div>
+              <div className={styles.profile_grid}>
+                <EmptyOrders />
+              </div>
             </div>
           </div>
         </section>
@@ -42,3 +46,17 @@ export default function Orders() {
     </>
   );
 }
+
+const EmptyOrders = () => {
+  return (
+    <div className={styles.emptyOrders}>
+      <div className={styles.emptyOrders_img}>
+        <Image src={ordersImage} alt="empty orders" />
+      </div>
+      <p>Ещё не успели заказать?</p>
+      <Link href="/" className="text_btn" style={{ marginTop: "24px" }}>
+        На главный
+      </Link>
+    </div>
+  );
+};

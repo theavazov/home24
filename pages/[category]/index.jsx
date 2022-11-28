@@ -2,6 +2,8 @@ import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import AsideNav from "../../components/AsideNav/AsideNav";
 import FullBanner from "../../components/fullBanner/FullBanner";
 import { arrowRight } from "../../components/icons/icons";
@@ -12,18 +14,13 @@ import mebel from "../../media/mebel-category-image.png";
 import styles from "./Test.module.css";
 
 export default function CategoryPage() {
-  // const router = useRouter();
-  // console.log(router.query.id);
-  // const [products, setProducts] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:3000/categories/${router.query.id}`)
-  //     .then((res) => {
-  //       console.log(res.data.products);
-  //       setProducts(res.data.products);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [router]);
+  const router = useRouter();
+  const { category } = router.query;
+
+  useEffect(() => {
+    console.log(category);
+  }, [router]);
+
   return (
     <>
       <Head>

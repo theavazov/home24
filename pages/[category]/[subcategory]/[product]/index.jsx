@@ -17,8 +17,17 @@ import ProductTab from "../../../../components/ProductInner/ProductTab/ProductTa
 import styles from "./SingleProduct.module.css";
 import Image from "next/image";
 import ProductSwiper from "../../../../components/ProductInner/ProductSwiper/ProductSwiper";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function SingleProductPage() {
+  const router = useRouter();
+  const { product } = router.query;
+
+  useEffect(() => {
+    console.log(product);
+  }, [router]);
+
   return (
     <>
       <Head>

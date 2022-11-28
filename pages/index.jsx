@@ -46,7 +46,7 @@ export default function Home() {
                 Смотреть все
               </Link>
             </div>
-            <div className="grid6">
+            <div className="grid6_brands">
               <Brand />
               <Brand />
               <Brand />

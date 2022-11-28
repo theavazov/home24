@@ -3,13 +3,12 @@ import Link from "next/link";
 import FullBanner from "../components/fullBanner/FullBanner";
 import { arrowRight } from "../components/icons/icons";
 import Layout from "../components/layout/Layout";
-import MiddleText from "../components/middleText/MiddleText";
 
-export default function Brands() {
+export default function About() {
   return (
     <>
       <Head>
-        <title>Home 24 | Brands</title>
+        <title>Home 24 | About</title>
       </Head>
       <Layout>
         <section>
@@ -20,13 +19,12 @@ export default function Brands() {
                   Главная
                 </Link>
                 {arrowRight}
-                <p className="page_node_element">Популярные бренды</p>
+                <p className="page_node_element">О нас</p>
               </div>
-              <p className="page_main_title">Популярные бренды</p>
+              <p className="page_main_title">О нас</p>
             </div>
           </div>
         </section>
-        <MiddleText />
         <FullBanner />
       </Layout>
     </>

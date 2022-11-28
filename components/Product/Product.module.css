@@ -113,3 +113,27 @@
   color: var(--black);
   margin-top: 8px;
 }
+
+@media (max-width: 880px) {
+  .product_img {
+    height: 200px;
+  }
+  .current_pice {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .product_info {
+    padding: 0px;
+    background-color: var(--white);
+    border-radius: 0px;
+  }
+  .info_desc,
+  .old_pice {
+    font-size: 11px;
+    line-height: 15px;
+  }
+  .product_rating span {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

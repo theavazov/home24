@@ -128,7 +128,7 @@ export default function Header() {
 
 const UserLink = ({ user }) => {
   return (
-    <Link href="/profile" className={styles.gap8_div}>
+    <Link href="/profile/orders" className={styles.gap8_div}>
       {login}
       <p>{user.name}</p>
     </Link>

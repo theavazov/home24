@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../../contexts/LoginContext";
 import LoginModal from "../login/Login";
+import Menu from "../Menu/Menu";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
@@ -22,6 +23,7 @@ export default function Layout({ children }) {
       <main className={isHome ? "" : "main"}>{children}</main>
       <Footer />
       {isModal && <LoginModal />}
+      <Menu />
     </div>
   );
 }

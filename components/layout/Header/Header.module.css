@@ -4,7 +4,7 @@
 
 .header_top_div_inner {
   padding-block: 10px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
@@ -12,7 +12,7 @@
 
 .header_inner {
   padding-block: 20px;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 38px;
 }

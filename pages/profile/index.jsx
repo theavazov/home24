@@ -1,11 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import FullBanner from "../../components/fullBanner/FullBanner";
 import { arrowRight, edit } from "../../components/icons/icons";
 import Layout from "../../components/layout/Layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
-import ordersImage from "../../media/active_orders.png";
 import styles from "./Profile.module.css";
 
 export default function Profile() {
@@ -76,30 +74,30 @@ export default function Profile() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.component_div}>
-                    <div className={styles.component_div_header}>
-                      <p>Уведомления или новости</p>
-                    </div>
-                    <div className={styles.component_div_body}>
-                      <p>Получайте информацию об акциях и скидках</p>
-                      <div className={styles.checkedinput}>
-                        <label className={styles.cont}>
-                          <input type="checkbox" />
-                          <div className={styles.switch}></div>
-                        </label>
-                        <p>через СМС</p>
-                      </div>
+                </div>
+                <div className={styles.component_div}>
+                  <div className={styles.component_div_header}>
+                    <p>Уведомления или новости</p>
+                  </div>
+                  <div className={styles.component_div_body}>
+                    <p>Получайте информацию об акциях и скидках</p>
+                    <div className={styles.checkedinput}>
+                      <label className={styles.cont}>
+                        <input type="checkbox" />
+                        <div className={styles.switch}></div>
+                      </label>
+                      <p>через СМС</p>
                     </div>
                   </div>
                 </div>
-                <div className={styles.component_div}>
+                {/* <div className={styles.component_div}>
                   <div className={styles.component_div_header}>
                     <p>Активные заказы</p>
                   </div>
                   <div className={styles.component_div_body}>
                     <EmptyOrders />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -109,17 +107,3 @@ export default function Profile() {
     </>
   );
 }
-
-const EmptyOrders = () => {
-  return (
-    <div className={styles.emptyOrders}>
-      <div className={styles.emptyOrders_img}>
-        <Image src={ordersImage} alt="empty orders" />
-      </div>
-      <p>Ещё не успели заказать?</p>
-      <Link href="/" className="text_btn" style={{ marginTop: "24px" }}>
-        На главный
-      </Link>
-    </div>
-  );
-};

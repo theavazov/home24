@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import AsideNav from "../../../components/AsideNav/AsideNav";
 import FullBanner from "../../../components/fullBanner/FullBanner";
 import { arrowRight, grid4, grid9 } from "../../../components/icons/icons";
@@ -10,7 +11,13 @@ import Product from "../../../components/Product/Product";
 import styles from "./Subcategories.module.css";
 
 export default function SubcategoryPage() {
+  const router = useRouter();
+  const { subcategory } = router.query;
   const [isGrid, setIsGrid] = useState(false);
+
+  useEffect(() => {
+    console.log(subcategory);
+  }, [router]);
   return (
     <>
       <Head>

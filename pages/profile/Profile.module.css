@@ -25,10 +25,6 @@
   overflow: hidden;
 }
 
-.component_div:nth-child(2) .component_div_body {
-  min-height: 195px;
-}
-
 .component_div:nth-child(2) .component_div_body > p {
   font-family: "Inter", sans-serif;
   font-size: 14px;
@@ -170,4 +166,73 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--black);
+}
+
+.profile_grid {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #f2f2fa;
+  padding-left: 24px;
+  gap: 48px;
+  width: 100%;
+}
+
+.profile_comp_div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-bottom: 1px solid #f2f2fa;
+  padding-bottom: 48px;
+  width: 100%;
+}
+
+.profile_comp_div:last-child {
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+
+.profile_div_title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.form_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.form_content_div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form_content_div label {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.form_content_div input,
+.form_content_div select {
+  font-family: "Inter", sans-serif;
+  padding: 16px;
+  border: 1px solid #ebebeb;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.grid2_buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 16px;
 }
