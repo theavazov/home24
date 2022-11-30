@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .loginModal {
   position: fixed;
   inset: 0;
@@ -35,7 +44,7 @@
 
 .loginContent_headerText {
   width: 100%;
-  font-family: "TT Firs Neue";
+  font-family: "TT Firs Neue", "Inter", sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
@@ -43,12 +52,13 @@
 }
 
 .loginCloser {
-  max-width: 32px;
+  max-width: 24px;
   width: 100%;
-  height: 32px;
+  height: 24px;
   display: grid;
   place-items: center;
   cursor: pointer;
+  color: var(--red);
 }
 
 .loginCloser span:first-child {
@@ -111,4 +121,30 @@
   gap: 6px;
   border: 1px solid #ebebeb;
   padding: 16px;
+}
+
+@media (max-width: 880px) {
+  .loginModal {
+    animation: fadeIn 0.3s ease;
+  }
+  .loginContent {
+    max-width: 100%;
+    animation: none;
+    height: 100%;
+  }
+  .loginContent_header {
+    padding: 16px;
+  }
+  .loginContent_headerText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .login_form {
+    padding: 16px;
+    gap: 16px;
+  }
+  .label_inp_div label {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

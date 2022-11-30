@@ -224,14 +224,14 @@ export const search = (
       cx="11.7666"
       cy="11.7666"
       r="8.98856"
-      stroke="currentColor"
+      stroke="#020105"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M18.0183 18.4851L21.5423 22"
-      stroke="currentColor"
+      stroke="#020105"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -241,8 +241,8 @@ export const search = (
 
 export const arrowRight = (
   <svg
-    width="16"
-    height="16"
+    width="12"
+    height="12"
     viewBox="0 0 16 16"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -251,6 +251,23 @@ export const arrowRight = (
       d="M5.66669 3.33366L10.3334 8.00033L5.66669 12.667"
       stroke="currentColor  "
       strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const arrowDown = (
+  <svg
+    className={styles.arrowDown}
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    strokeWidth="1.5"
+  >
+    <path
+      d="M17.4168 7.79199L11.0002 14.2087L4.5835 7.79199"
+      stroke="#020105"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -345,28 +362,28 @@ export const grid4 = (
     <path
       d="M16.2853 2.6H19.5519C20.567 2.6 21.3998 3.4322 21.3998 4.47018V7.7641C21.3998 8.80121 20.5669 9.63429 19.5519 9.63429H16.2853C15.2692 9.63429 14.4364 8.80105 14.4364 7.7641V4.47018C14.4364 3.43237 15.2691 2.6 16.2853 2.6Z"
       stroke="currentColor"
-      strokeWidth="1.2"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M4.44892 2.6H7.71449C8.73078 2.6 9.56341 3.43237 9.56341 4.47018V7.7641C9.56341 8.80105 8.73062 9.63429 7.71449 9.63429H4.44892C3.43279 9.63429 2.6 8.80105 2.6 7.7641V4.47018C2.6 3.43237 3.43263 2.6 4.44892 2.6Z"
       stroke="currentColor"
-      strokeWidth="1.2"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M4.44892 14.3656H7.71449C8.73062 14.3656 9.56341 15.1978 9.56341 16.2368V19.5297C9.56341 20.5675 8.73078 21.3999 7.71449 21.3999H4.44892C3.43263 21.3999 2.6 20.5675 2.6 19.5297V16.2368C2.6 15.1978 3.43279 14.3656 4.44892 14.3656Z"
       stroke="currentColor"
-      strokeWidth="1.2"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M16.2853 14.3656H19.5519C20.5669 14.3656 21.3998 15.1977 21.3998 16.2368V19.5297C21.3998 20.5677 20.567 21.3999 19.5519 21.3999H16.2853C15.2691 21.3999 14.4364 20.5675 14.4364 19.5297V16.2368C14.4364 15.1978 15.2692 14.3656 16.2853 14.3656Z"
       stroke="currentColor"
-      strokeWidth="1.2"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -557,8 +574,26 @@ export const home = (
     <path
       d="M9.15722 20.7714V17.7047C9.1572 16.9246 9.79312 16.2908 10.581 16.2856H13.4671C14.2587 16.2856 14.9005 16.9209 14.9005 17.7047V17.7047V20.7809C14.9003 21.4432 15.4343 21.9845 16.103 22H18.0271C19.9451 22 21.5 20.4607 21.5 18.5618V18.5618V9.83784C21.4898 9.09083 21.1355 8.38935 20.538 7.93303L13.9577 2.6853C12.8049 1.77157 11.1662 1.77157 10.0134 2.6853L3.46203 7.94256C2.86226 8.39702 2.50739 9.09967 2.5 9.84736V18.5618C2.5 20.4607 4.05488 22 5.97291 22H7.89696C8.58235 22 9.13797 21.4499 9.13797 20.7714V20.7714"
       stroke="currentColor"
+      strokeWidth="1.5"
       strokeLinecap="round"
-      strokelinejoin="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const bell = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth="1.5"
+    stroke="currentColor"
+    className="w-6 h-6"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
     />
   </svg>
 );

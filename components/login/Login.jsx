@@ -34,15 +34,16 @@ export default function LoginModal() {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("click", (e) => {
-      if (e.target.className.includes("loginModal")) {
-        setIsModal(false);
-      } else if (e.target.className.includes("loginContent")) {
-        setIsModal(true);
-      }
-    });
-  }, [setIsModal]);
+  // useEffect(() => {
+  //   window.addEventListener("click", (e) => {
+  //     if (e.target.className.includes("loginModal")) {
+  //       setIsModal(false);
+  //     } else if (e.target.className.includes("loginContent")) {
+  //       setIsModal(true);
+  //     }
+  //   });
+  // }, [setIsModal]);
+
   return (
     <div className={styles.loginModal}>
       <div className={styles.loginContent}>
@@ -50,14 +51,22 @@ export default function LoginModal() {
           <p className={styles.loginContent_headerText}>
             Войти или создать профиль
           </p>
-          <div
-            role={"button"}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
             className={styles.loginCloser}
+            role={"button"}
             onClick={() => setIsModal(false)}
           >
-            <span></span>
-            <span></span>
-          </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
         </div>
         <form className={styles.login_form}>
           <div

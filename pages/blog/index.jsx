@@ -1,7 +1,8 @@
 import Head from "next/head";
+import Link from "next/link";
 import { Blog } from "..";
+import { arrowRight } from "../../components/icons/icons";
 import Layout from "../../components/layout/Layout";
-import MiddleText from "../../components/middleText/MiddleText";
 
 export default function BlogPage() {
   return (
@@ -12,10 +13,29 @@ export default function BlogPage() {
       <Layout>
         <section>
           <div className="container">
-            <div className="titles_div">
+            <div className="main_text_content">
+              <div className="page_node">
+                <Link href="/" className="page_node_element active">
+                  Главная
+                </Link>
+                {arrowRight}
+                <p className="page_node_element">Блог</p>
+              </div>
               <p className="page_main_title">Блог</p>
             </div>
+          </div>
+        </section>
+        <section>
+          <div className="container">
             <div className="blog_container">
+              <Blog />
+              <Blog />
+              <Blog />
+              <Blog />
+              <Blog />
+              <Blog />
+              <Blog />
+              <Blog />
               <Blog />
               <Blog />
               <Blog />
@@ -23,7 +43,6 @@ export default function BlogPage() {
             </div>
           </div>
         </section>
-        <MiddleText />
       </Layout>
     </>
   );

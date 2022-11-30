@@ -1,0 +1,23 @@
+.mainMenu {
+  position: absolute;
+  top: 120.5px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 120.5px);
+  background-color: var(--white);
+  z-index: 6;
+  transform: translateY(-160%);
+  transition: 0.5s;
+  /* border: 1px solid red; */
+}
+
+.mainMenu.show {
+  transform: translateY(0%);
+  transition: 0.5s;
+}
+
+@media (max-width: 880px) {
+  .mainMenu {
+    top: 128px;
+  }
+}

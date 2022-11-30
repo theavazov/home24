@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { Brand } from "./index";
 import FullBanner from "../components/fullBanner/FullBanner";
 import { arrowRight } from "../components/icons/icons";
 import Layout from "../components/layout/Layout";
@@ -23,6 +24,25 @@ export default function Brands() {
                 <p className="page_node_element">Популярные бренды</p>
               </div>
               <p className="page_main_title">Популярные бренды</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="container">
+            <div className="grid6_brands">
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
+              <Brand />
             </div>
           </div>
         </section>

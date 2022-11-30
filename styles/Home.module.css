@@ -13,7 +13,7 @@
   overflow: hidden;
   background: linear-gradient(
     180deg,
-    rgba(138, 138, 138, 0) 58.84%,
+    rgba(138, 138, 138, 0) 5%,
     rgba(83, 83, 83, 0.76) 100%
   );
   padding: 24px;
@@ -21,6 +21,10 @@
   display: flex;
   position: relative;
   color: var(--white);
+}
+
+.blog:hover {
+  color: var(--white) !important;
 }
 
 .blog img {
@@ -36,5 +40,12 @@
 @media (max-width: 880px) {
   .blog {
     padding: 16px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 580px) {
+  .blog {
+    padding: 12px;
   }
 }

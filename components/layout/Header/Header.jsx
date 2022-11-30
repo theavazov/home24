@@ -1,4 +1,5 @@
 import {
+  arrowDown,
   bag,
   heart,
   instagram,
@@ -13,13 +14,18 @@ import logo from "../../../media/logo.png";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { LoginContext } from "../../../contexts/LoginContext";
 import { UserContext } from "../../../contexts/UserContext";
+import MainMenu from "../../MainMenu/MainMenu";
+import uz from "../../../media/uz.png";
+import ru from "../../../media/ru.png";
+import en from "../../../media/en.png";
 
-export default function Header() {
+export default function Header({ isCatalogue, setIsCatalogue }) {
   const router = useRouter();
   const pathname = router.pathname;
+  const [isLangs, setIsLangs] = useState(false);
 
   const { setIsModal } = useContext(LoginContext);
   const { user } = useContext(UserContext);
@@ -30,6 +36,10 @@ export default function Header() {
       setIsUser(true);
     }
   }, []);
+
+  const uzbek = useRef();
+  const russian = useRef();
+  const english = useRef();
 
   return (
     <header>
@@ -57,10 +67,56 @@ export default function Header() {
             >
               +998 71 200 7 002
             </a>
-            <select className={styles.langChanger}>
-              <option value="ru">Рус</option>
-              <option value="uz">O&apos;zb</option>
-            </select>
+            <div className={styles.mainChanger}>
+              <div
+                className={styles.langChanger}
+                role="button"
+                onClick={() => setIsLangs(!isLangs)}
+              >
+                <p>Рус</p>
+                <span className={isLangs ? styles.rotate : styles.notrotate}>
+                  {arrowDown}
+                </span>
+              </div>
+              <div
+                className={
+                  isLangs
+                    ? `${styles.lang_options_div} ${styles.show}`
+                    : styles.lang_options_div
+                }
+              >
+                <div
+                  className={styles.lang}
+                  value="uz"
+                  role={"button"}
+                  ref={uzbek}
+                  onClick={(e) => console.log(e.target.parentElement)}
+                >
+                  <p>O’zbekcha</p>
+                  <Image src={uz} alt="uz" />
+                </div>
+                <div
+                  className={styles.lang}
+                  value="ru"
+                  role={"button"}
+                  ref={russian}
+                  onClick={(e) => console.log(e.target.parentElement)}
+                >
+                  <p>Русский</p>
+                  <Image src={ru} alt="ru" />
+                </div>
+                <div
+                  className={styles.lang}
+                  value="en"
+                  role={"button"}
+                  ref={english}
+                  onClick={(e) => console.log(e.target.parentElement)}
+                >
+                  <p>English</p>
+                  <Image src={en} alt="en" />
+                </div>
+              </div>
+            </div>
           </nav>
         </div>
       </div>
@@ -68,11 +124,15 @@ export default function Header() {
         <Link className={styles.logo} href="/">
           <Image src={logo} alt="logo" />
         </Link>
-        <div className={styles.category_btn} role="button">
+        <div
+          className={styles.category_btn}
+          role="button"
+          onClick={() => setIsCatalogue(!isCatalogue)}
+        >
           <div className={styles.hamburger}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span className={isCatalogue ? styles.rotate45 : ""}></span>
+            <span className={isCatalogue ? "hidden" : ""}></span>
+            <span className={isCatalogue ? styles.rotateMinus45 : ""}></span>
           </div>
           <p>Каталог</p>
         </div>
@@ -122,6 +182,82 @@ export default function Header() {
           )}
         </div>
       </div>
+      <div className={styles.mobile_header}>
+        <div className={styles.mobile_top}>
+          <Link className={styles.logo} href="/">
+            <Image src={logo} alt="logo" />
+          </Link>
+          <div className={styles.mainChanger}>
+            <div
+              className={styles.langChanger}
+              role="button"
+              onClick={() => setIsLangs(!isLangs)}
+            >
+              <p>Рус</p>
+              <span className={isLangs ? styles.rotate : styles.notrotate}>
+                {arrowDown}
+              </span>
+            </div>
+            <div
+              className={
+                isLangs
+                  ? `${styles.lang_options_div} ${styles.show}`
+                  : styles.lang_options_div
+              }
+            >
+              <div
+                className={styles.lang}
+                value="uz"
+                role={"button"}
+                ref={uzbek}
+                onClick={(e) => console.log(e.target.parentElement)}
+              >
+                <p>O’zbekcha</p>
+                <Image src={uz} alt="uz" />
+              </div>
+              <div
+                className={styles.lang}
+                value="ru"
+                role={"button"}
+                ref={russian}
+                onClick={(e) => console.log(e.target.parentElement)}
+              >
+                <p>Русский</p>
+                <Image src={ru} alt="ru" />
+              </div>
+              <div
+                className={styles.lang}
+                value="en"
+                role={"button"}
+                ref={english}
+                onClick={(e) => console.log(e.target.parentElement)}
+              >
+                <p>English</p>
+                <Image src={en} alt="en" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.mobile_bottom}>
+          <div
+            className={styles.category_btn}
+            role="button"
+            onClick={() => setIsCatalogue(!isCatalogue)}
+          >
+            <div className={styles.hamburger}>
+              <span className={isCatalogue ? styles.rotate45 : ""}></span>
+              <span className={isCatalogue ? "hidden" : ""}></span>
+              <span className={isCatalogue ? styles.rotateMinus45 : ""}></span>
+            </div>
+            <p>Каталог</p>
+          </div>
+          <div className={styles.search_div}>
+            <input type="text" placeholder="Искать" />
+            <button className={styles.search_btn}>{search}</button>
+          </div>
+        </div>
+      </div>
+      <MainMenu isCatalogue={isCatalogue} />
     </header>
   );
 }

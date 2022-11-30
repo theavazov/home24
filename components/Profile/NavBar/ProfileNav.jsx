@@ -4,8 +4,7 @@ import { login, cart, logout } from "../../icons/icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function ProfileNav() {
-  const [isLogout, setIsLogout] = useState(false);
+export default function ProfileNav({ isLogout, setIsLogout }) {
   const router = useRouter();
   useEffect(() => {
     if (router.pathname == "/profile/orders") {
@@ -45,52 +44,6 @@ export default function ProfileNav() {
         <div className={styles.icon_div}>{logout}</div>
         <p>Выйти</p>
       </button>
-      {isLogout && <Logout setIsLogout={setIsLogout} />}
     </aside>
   );
 }
-
-const Logout = ({ setIsLogout }) => {
-  const router = useRouter();
-  const onSave = () => {
-    localStorage.removeItem("user");
-    setIsLogout(false);
-    router.push("/");
-  };
-  useEffect(() => {
-    window.addEventListener("click", (e) => {
-      if (e.target.className.includes("modal")) {
-        setIsLogout(false);
-      } else if (e.target.className.includes("modal_content")) {
-        setIsLogout(true);
-      }
-    });
-  }, [setIsLogout]);
-  return (
-    <div className={styles.modal}>
-      <div className={styles.modal_content}>
-        <div className={styles.modal_content_header}>
-          <p className={styles.modal_content_headerText}>
-            Сохранить перед выходом ?
-          </p>
-          <div
-            role={"button"}
-            className={styles.modalCloser}
-            onClick={() => setIsLogout(false)}
-          >
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <div className={styles.modal_content_body}>
-          <button type="button" onClick={() => setIsLogout(false)}>
-            Отменить
-          </button>
-          <button type="button" onClick={onSave}>
-            Сохранить
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};

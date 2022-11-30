@@ -4,13 +4,36 @@ import styles from "./Footer.module.css";
 import qr from "../../../media/qr.png";
 import {
   apple,
+  arrowDown,
   facebook,
   googleplay,
   instagram,
   telegram,
 } from "../../icons/icons";
+import { useState } from "react";
+import { Accordion } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Footer() {
+  const [isClicked, setIsClicked] = useState(false);
+  const onAccordionClick = (e) => {
+    // const buttons = document.querySelectorAll(
+    //   ".Footer_footer_accordion_btn__AMkEQ"
+    // );
+    // const bodies = document.querySelectorAll(
+    //   ".Footer_footer_accordion_body___FJ0C"
+    // );
+    // buttons.forEach((btn, i) => {
+    //   btn.addEventListener("click", () => {
+    //     bodies.forEach((body) => {
+    //       body.classList.remove(styles.show);
+    //     });
+    //     bodies[i].classList.add(styles.show);
+    //   });
+    // });
+    console.log("Eh");
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footer_inner}`}>
@@ -128,6 +151,144 @@ export default function Footer() {
               </a>
             </nav>
           </div>
+        </div>
+      </div>
+      <div className={styles.mobile_footer}>
+        <div className="container">
+          <Accordion>
+            <Accordion.Item eventKey="0" className={styles.footer_accordion}>
+              <Accordion.Header
+                className={styles.footer_accordion_btn}
+                role="button"
+                onClick={onAccordionClick}
+              >
+                <p>Информация</p>
+                {arrowDown}
+              </Accordion.Header>
+              <Accordion.Body
+                className={
+                  isClicked
+                    ? `${styles.footer_accordion_body} ${styles.show}`
+                    : styles.footer_accordion_body
+                }
+              >
+                <Link href="#" className={styles.accordion_link}>
+                  О компании
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Наши партнеры
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Блог
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  О наших акциях и скидках
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Пользовательское соглашение
+                </Link>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1" className={styles.footer_accordion}>
+              <Accordion.Header
+                className={styles.footer_accordion_btn}
+                role="button"
+                onClick={onAccordionClick}
+              >
+                <p>Информация</p>
+                {arrowDown}
+              </Accordion.Header>
+              <Accordion.Body
+                className={
+                  isClicked
+                    ? `${styles.footer_accordion_body} ${styles.show}`
+                    : styles.footer_accordion_body
+                }
+              >
+                <Link href="#" className={styles.accordion_link}>
+                  О компании
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Наши партнеры
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Блог
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  О наших акциях и скидках
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Пользовательское соглашение
+                </Link>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2" className={styles.footer_accordion}>
+              <Accordion.Header
+                className={styles.footer_accordion_btn}
+                role="button"
+                onClick={onAccordionClick}
+              >
+                <p>Информация</p>
+                {arrowDown}
+              </Accordion.Header>
+              <Accordion.Body
+                className={
+                  isClicked
+                    ? `${styles.footer_accordion_body} ${styles.show}`
+                    : styles.footer_accordion_body
+                }
+              >
+                <Link href="#" className={styles.accordion_link}>
+                  О компании
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Наши партнеры
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Блог
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  О наших акциях и скидках
+                </Link>
+                <Link href="#" className={styles.accordion_link}>
+                  Пользовательское соглашение
+                </Link>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+          <div className={styles.mobile_qr}>
+            <div className="qr_div">
+              <div className="qr">
+                <Image src={qr} alt="qr code" />
+              </div>
+              <p className="qr_text">
+                Наведите камеру на QR-код, чтобы найти местоположение
+              </p>
+            </div>
+          </div>
+          <nav className={styles.footer_social_media}>
+            <a
+              href="#"
+              aria-label="instagram"
+              className={styles.footer_icon_div}
+            >
+              {instagram}
+            </a>
+            <a
+              href="#"
+              aria-label="telegram"
+              className={styles.footer_icon_div}
+            >
+              {telegram}
+            </a>
+            <a
+              href="#"
+              aria-label="facebook"
+              className={styles.footer_icon_div}
+            >
+              {facebook}
+            </a>
+          </nav>
         </div>
       </div>
     </footer>

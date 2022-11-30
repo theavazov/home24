@@ -1,6 +1,6 @@
 .footer {
   margin-top: 120px;
-  display: none;
+  display: flex;
 }
 
 .footer_inner {
@@ -41,12 +41,12 @@
   line-height: 28px;
   color: var(--gray);
   width: fit-content;
-  transition: 0.3s;
+  transition: 0.3s !important;
 }
 
 .footer_top_nav a:hover {
-  color: var(--black);
-  transition: 0.3s;
+  color: var(--black) !important;
+  transition: 0.3s !important;
 }
 
 .footer_outer_link {
@@ -93,8 +93,8 @@
 }
 
 .footer_icon_div:hover {
-  color: var(--main-orange);
-  transition: 0.3s;
+  color: var(--main-orange) !important;
+  transition: 0.3s !important;
 }
 
 .footer_copy_text {
@@ -115,4 +115,88 @@
   font-size: 18px;
   line-height: 24px;
   color: var(--black);
+}
+
+.mobile_footer {
+  display: none;
+  max-width: 100%;
+  width: 100%;
+}
+
+.footer_accordion:last-child,
+.footer_accordion:first-child {
+  border-radius: 0px !important;
+}
+
+.footer_accordion_btn p {
+  width: 100%;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.footer_accordion_body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  background-color: unset !important;
+}
+
+.accordion_link {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--gray);
+}
+
+@media (max-width: 1800px) {
+  .footer_top_nav {
+    margin-top: 24px;
+  }
+  .footer_top_title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .footer_top_nav a,
+  .footer_copy_text,
+  .footer_right_text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer_inner {
+    padding-block: 40px;
+  }
+  .footer_bottom_left {
+    gap: 24px;
+  }
+  .footer_top {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 60px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 880px) {
+  .footer {
+    margin-top: 60px;
+    margin-bottom: 100px;
+  }
+  .mobile_footer {
+    display: flex;
+  }
+  .footer_inner {
+    display: none;
+  }
+  .footer_social_media {
+    border-top: 1px solid #ebebeb;
+    padding-block: 24px;
+  }
+  .mobile_qr {
+    padding-block: 24px;
+  }
 }

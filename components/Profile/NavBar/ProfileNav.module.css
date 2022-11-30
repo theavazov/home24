@@ -15,7 +15,7 @@
 }
 
 .profile_link.active p {
-  color: var(--main-orange);
+  color: var(--main-orange) !important  ;
 }
 
 .profile_link {
@@ -33,6 +33,7 @@
   font-size: 16px;
   line-height: 24px;
   text-align: left;
+  color: var(--black) !important;
 }
 
 .icon_div {
@@ -49,101 +50,4 @@
   width: 20px !important;
   height: 20px !important;
   color: var(--black);
-}
-
-@keyframes popUp {
-  from {
-    transform: translateX(-300%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-.modal {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: grid;
-  place-items: center;
-  z-index: 10;
-}
-
-.modal_content {
-  max-width: 590px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: white;
-  animation: popUp 0.8s ease;
-}
-
-.modal_content_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px 40px;
-  background-color: var(--bg-gray);
-}
-
-.modal_content_headerText {
-  width: 100%;
-  font-family: "TT Firs Neue";
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 32px;
-  color: var(--black);
-}
-
-.modalCloser {
-  max-width: 32px;
-  width: 100%;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-}
-
-.modalCloser span:first-child {
-  transform: rotate(45deg);
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: var(--red);
-}
-
-.modalCloser span:last-child {
-  transform: rotate(-45deg);
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: var(--red);
-}
-
-.modal_content_body {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 54px 40px;
-}
-
-.modal_content_body button {
-  padding: 16px;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.modal_content_body button:first-child {
-  background-color: #f9f9f9;
-  border: 1px solid #f9f9f9;
-}
-
-.modal_content_body button:last-child {
-  background-color: var(--main-orange);
-  border: 1px solid var(--main-orange);
-  color: var(--white);
 }

@@ -10,6 +10,7 @@ export default function Layout({ children }) {
   const router = useRouter();
   const [isHome, setIsHome] = useState(true);
   const { isModal } = useContext(LoginContext);
+  const [isCatalogue, setIsCatalogue] = useState(false);
 
   useEffect(() => {
     if (router.pathname !== "/") {
@@ -19,11 +20,11 @@ export default function Layout({ children }) {
 
   return (
     <div id="app">
-      <Header />
+      <Header isCatalogue={isCatalogue} setIsCatalogue={setIsCatalogue} />
       <main className={isHome ? "" : "main"}>{children}</main>
       <Footer />
       {isModal && <LoginModal />}
-      <Menu />
+      <Menu isCatalogue={isCatalogue} setIsCatalogue={setIsCatalogue} />
     </div>
   );
 }

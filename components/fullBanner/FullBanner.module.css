@@ -2,7 +2,7 @@
   background-color: var(--bg-gray);
   padding: 80px 96px;
   border-radius: 24px;
-  display: none;
+  display: flex;
   align-items: center;
   gap: 24px;
   justify-content: space-between;
@@ -39,7 +39,7 @@
   font-size: 24px;
   line-height: 32px;
   font-weight: 500;
-  color: var(--black);
+  color: var(--gray);
 }
 
 .fullbanner_bottom {
@@ -84,4 +84,118 @@
   object-fit: contain;
   width: 270px;
   height: 540px;
+}
+
+@media (max-width: 1800px) {
+  .fullBanner_inner {
+    padding: 64px;
+  }
+  .fullBanner_texts p:first-child {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .fullBanner_texts p:last-child {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .fullBanner_img img:first-child {
+    width: 220px;
+  }
+  .fullBanner_img img:last-child {
+    width: 220px;
+    height: 500px;
+    right: 140px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .fullBanner_img img:first-child {
+    width: 200px;
+    height: 380px;
+    top: 18%;
+    right: 20%;
+  }
+  .fullBanner_img img:last-child {
+    width: 220px;
+    height: 380px;
+    right: 8%;
+    top: 5%;
+  }
+  .fullBanner_texts p:first-child {
+    font-size: 32px;
+    line-height: 40px;
+    max-width: 600px;
+  }
+  .fullBanner_texts p:last-child {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .fullbanner_bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fullBanner_content {
+    max-width: 100%;
+  }
+  .fullbanner_bottom {
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .fullBanner_texts p:first-child {
+    max-width: 100%;
+  }
+  .fullBanner_img {
+    display: none;
+  }
+}
+
+@media (max-width: 880px) {
+  .fullBanner_inner {
+    padding: 32px;
+    border-radius: 16px;
+  }
+  .fullBanner_texts p:first-child {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .fullBanner_texts p:last-child {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .fullBanner_container {
+    padding-inline: 0px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .fullBanner_inner {
+    padding: 16px;
+    border-radius: 8px;
+  }
+  .fullBanner_texts p:first-child {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .fullBanner_texts p:last-child {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .stores img {
+    width: 105px;
+    height: 33px;
+  }
+  .fullBanner_content {
+    gap: 12px;
+  }
+  .fullBanner_texts {
+    gap: 6px;
+  }
+  .fullbanner_bottom {
+    margin-top: 0px;
+  }
 }

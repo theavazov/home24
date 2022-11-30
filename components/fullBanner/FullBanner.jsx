@@ -10,7 +10,7 @@ import phone2 from "../../media/fb-2.png";
 export default function FullBanner() {
   return (
     <section className="section">
-      <div className={`container`}>
+      <div className={`container ${styles.fullBanner_container}`}>
         <div className={styles.fullBanner_inner}>
           <div className={styles.fullBanner_content}>
             <div className={styles.fullBanner_texts}>

@@ -6,7 +6,7 @@
   padding: 24px;
   gap: 20px;
   color: var(--black);
-  transition: 0.3s;
+  transition: 0.3s !important;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -35,8 +35,8 @@
 }
 
 .category:hover {
-  color: var(--main-orange);
-  transition: 0.3s;
+  color: var(--main-orange) !important;
+  transition: 0.3s !important;
 }
 
 @media (max-width: 880px) {

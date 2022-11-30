@@ -23,10 +23,7 @@ export default function Home() {
         <section className="section">
           <div className={`container`}>
             <div className="titles_div">
-              <p className="category_title">Популярные категории</p>
-              <Link href="#" className="category_view_all">
-                Все товары
-              </Link>
+              <p className="category_title">Kатегории</p>
             </div>
             <div className="grid6">
               <Category />

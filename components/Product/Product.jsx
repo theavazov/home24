@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Product.module.css";
-// import kreslo from "../../media/kreslo-gamer.png";
 import kreslo from "../../media/kresl-ofis.png";
-import { cart, star } from "../icons/icons";
+import { cart, heart, star } from "../icons/icons";
 
 export default function Product({ isGrid }) {
   return (
     <Link href="/dynamic/gamer/kreslo" className={styles.product}>
       <div className={isGrid ? styles.product_img_big : styles.product_img}>
+        <div className={styles.heart}>{heart}</div>
         <Image src={kreslo} alt="Kreslo" />
       </div>
       <div className={styles.product_info}>
