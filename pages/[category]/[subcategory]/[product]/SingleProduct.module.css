@@ -48,6 +48,11 @@
   gap: 16px;
 }
 
+.svg_div svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
 .svg_div button {
   background-color: unset;
   display: grid;

@@ -4,7 +4,7 @@ import { login, cart, logout } from "../../icons/icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function ProfileNav({ isLogout, setIsLogout }) {
+export default function ProfileNav({ setIsLogout }) {
   const router = useRouter();
   useEffect(() => {
     if (router.pathname == "/profile/orders") {

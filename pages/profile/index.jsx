@@ -50,7 +50,7 @@ export default function Profile() {
         <section>
           <div className={`container ${styles.profile_container}`}>
             <div className={styles.main_content}>
-              <ProfileNav isLogout={isLogout} setIsLogout={setIsLogout} />
+              <ProfileNav setIsLogout={setIsLogout} />
               <div className={styles.profile_div}>
                 <div
                   style={{
@@ -213,7 +213,7 @@ const FullUser = ({ user, setIsLogout }) => {
   );
 };
 
-const Logout = ({ setIsLogout }) => {
+export const Logout = ({ setIsLogout }) => {
   const router = useRouter();
   const onSave = () => {
     localStorage.removeItem("user");

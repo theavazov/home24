@@ -11,15 +11,6 @@
   --red: #ef3f27;
 }
 
-/* ::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--main-orange);
-  border-radius: 20px;
-} */
-
 *,
 *::before,
 *::after {
@@ -31,7 +22,11 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+input:focus {
+  outline: none !important;
 }
 
 a {
@@ -51,6 +46,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
@@ -66,7 +62,6 @@ main {
   width: 100%;
   margin: 0 auto;
   padding-inline: 20px;
-  /* border: 1px solid red; */
 }
 
 .page_main_title {
@@ -118,6 +113,7 @@ main {
   transition: 0.3s !important;
   font-size: 16px;
   line-height: 24px;
+  text-align: center;
 }
 
 .primary_btn:hover {
@@ -138,6 +134,7 @@ main {
   color: var(--main-orange);
   cursor: pointer;
   transition: 0.3s !important;
+  text-align: center;
 }
 
 .secondary_btn:hover {
@@ -158,6 +155,7 @@ main {
   cursor: pointer;
   color: var(--black);
   transition: 0.3s;
+  text-align: center;
 }
 
 .text_btn {
@@ -169,6 +167,7 @@ main {
   background-color: unset;
   cursor: pointer;
   transition: 0.3s;
+  text-align: center;
 }
 
 .text_btn:hover {
@@ -622,6 +621,10 @@ a.page_node_element:hover {
   .error_desc {
     font-size: 16px;
     line-height: 24px;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
   }
 }
 

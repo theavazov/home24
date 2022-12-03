@@ -14,28 +14,11 @@ import { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Footer() {
+export default function Footer({ isSearch }) {
   const [isClicked, setIsClicked] = useState(false);
-  const onAccordionClick = (e) => {
-    // const buttons = document.querySelectorAll(
-    //   ".Footer_footer_accordion_btn__AMkEQ"
-    // );
-    // const bodies = document.querySelectorAll(
-    //   ".Footer_footer_accordion_body___FJ0C"
-    // );
-    // buttons.forEach((btn, i) => {
-    //   btn.addEventListener("click", () => {
-    //     bodies.forEach((body) => {
-    //       body.classList.remove(styles.show);
-    //     });
-    //     bodies[i].classList.add(styles.show);
-    //   });
-    // });
-    console.log("Eh");
-  };
 
   return (
-    <footer className={styles.footer}>
+    <footer className={isSearch ? "hidden" : styles.footer}>
       <div className={`container ${styles.footer_inner}`}>
         <div className={styles.footer_top}>
           <div className={styles.footer_top_div}>
@@ -160,7 +143,6 @@ export default function Footer() {
               <Accordion.Header
                 className={styles.footer_accordion_btn}
                 role="button"
-                onClick={onAccordionClick}
               >
                 <p>Информация</p>
                 {arrowDown}
@@ -193,7 +175,6 @@ export default function Footer() {
               <Accordion.Header
                 className={styles.footer_accordion_btn}
                 role="button"
-                onClick={onAccordionClick}
               >
                 <p>Информация</p>
                 {arrowDown}
@@ -226,7 +207,6 @@ export default function Footer() {
               <Accordion.Header
                 className={styles.footer_accordion_btn}
                 role="button"
-                onClick={onAccordionClick}
               >
                 <p>Информация</p>
                 {arrowDown}

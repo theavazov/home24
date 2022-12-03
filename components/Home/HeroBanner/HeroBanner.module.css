@@ -44,9 +44,16 @@
   .herobanner_inner {
     flex-direction: column;
     gap: 20px;
+    padding-block: 20px;
   }
   .productOfTheDay_swiper,
   .mainBanner_swiper {
     max-width: 100%;
+  }
+  .mainBanner_swiperSlide {
+    height: 160px !important;
+  }
+  .productOfTheDay_swiperSlide {
+    height: 220px !important;
   }
 }

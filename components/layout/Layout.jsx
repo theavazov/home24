@@ -11,18 +11,26 @@ export default function Layout({ children }) {
   const [isHome, setIsHome] = useState(true);
   const { isModal } = useContext(LoginContext);
   const [isCatalogue, setIsCatalogue] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
 
   useEffect(() => {
     if (router.pathname !== "/") {
       setIsHome(false);
     }
+    if (router.pathname == "/search") {
+      setIsSearch(true);
+    }
   }, [router.pathname]);
 
   return (
     <div id="app">
-      <Header isCatalogue={isCatalogue} setIsCatalogue={setIsCatalogue} />
+      <Header
+        isCatalogue={isCatalogue}
+        setIsCatalogue={setIsCatalogue}
+        isSearch={isSearch}
+      />
       <main className={isHome ? "" : "main"}>{children}</main>
-      <Footer />
+      <Footer isSearch={isSearch} />
       {isModal && <LoginModal />}
       <Menu isCatalogue={isCatalogue} setIsCatalogue={setIsCatalogue} />
     </div>

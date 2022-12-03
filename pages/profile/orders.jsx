@@ -7,8 +7,11 @@ import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
 import styles from "./Profile.module.css";
 import ordersImage from "../../media/active_orders.png";
 import Image from "next/image";
+import { useState } from "react";
+import { Logout } from "./index";
 
 export default function Orders() {
+  const [isLogout, setIsLogout] = useState(false);
   return (
     <>
       <Head>
@@ -34,14 +37,18 @@ export default function Orders() {
         <section>
           <div className="container">
             <div className={styles.main_content}>
-              <ProfileNav />
+              <ProfileNav setIsLogout={setIsLogout} />
               <div className={styles.profile_grid}>
                 <EmptyOrders />
               </div>
             </div>
+            <div className={styles.mobile_content_orders}>
+              <EmptyOrders />
+            </div>
           </div>
         </section>
         <FullBanner />
+        {isLogout && <Logout setIsLogout={setIsLogout} />}
       </Layout>
     </>
   );
@@ -53,8 +60,12 @@ const EmptyOrders = () => {
       <div className={styles.emptyOrders_img}>
         <Image src={ordersImage} alt="empty orders" />
       </div>
-      <p>Ещё не успели заказать?</p>
-      <Link href="/" className="text_btn" style={{ marginTop: "24px" }}>
+      <p className={styles.empty_orders_title}>Ещё не успели заказать?</p>
+      <p>
+        У вас отсутствуют активные заказы! Воспользуйтесь поиском, чтобы найти
+        всё что нужно.
+      </p>
+      <Link href="/" className="secondary_btn" style={{ marginTop: "24px" }}>
         На главный
       </Link>
     </div>

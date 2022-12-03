@@ -33,16 +33,18 @@ export default function Menu({ isCatalogue, setIsCatalogue }) {
           {home}
           <p>Главная</p>
         </Link>
-        <div
-          className={styles.menu_item}
+        <Link
+          href="/search"
+          className={
+            pathname == "/search"
+              ? `${styles.menu_item} ${styles.active}`
+              : styles.menu_item
+          }
           role="button"
-          onClick={() => {
-            setIsCatalogue(!isCatalogue);
-          }}
         >
           {grid4}
           <p>Категории</p>
-        </div>
+        </Link>
         <Link
           href="/wishes"
           className={

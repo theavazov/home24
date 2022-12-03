@@ -67,6 +67,7 @@
   font-weight: 300;
   color: var(--gray);
   margin-top: 16px !important;
+  text-align: center;
 }
 
 .emptyOrders_img {
@@ -297,7 +298,7 @@
 
 .fullUser_container {
   width: 100%;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 
 .edit_page_link {
@@ -427,6 +428,21 @@
   color: var(--white);
 }
 
+.mobile_content,
+.mobile_content_edit,
+.mobile_content_orders {
+  display: none;
+}
+
+.empty_orders_title {
+  font-family: "Inter", sans-serif !important;
+  font-size: 20px !important;
+  line-height: 26px !important;
+  font-weight: 600 !important;
+  color: var(--black) !important;
+  margin-top: 24px !important;
+}
+
 @media (max-width: 1800px) {
   .component_div_body {
     gap: 16px;
@@ -454,6 +470,13 @@
   .mobile_content {
     display: flex;
   }
+  .mobile_content_orders {
+    display: block;
+  }
+  .mobile_content_edit {
+    display: flex;
+    flex-direction: column;
+  }
   .checkedinput {
     margin-top: 0px;
   }
@@ -461,5 +484,32 @@
     max-width: 100%;
     height: 100%;
     animation: none;
+  }
+  .profile_cont_div {
+    padding-block: 16px;
+    border-bottom: 1px solid #f2f2fa;
+    width: 100%;
+  }
+  .profile_cont_div:last-child {
+    border-bottom: none;
+  }
+  .profile_div_title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .form_div {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 16px;
+  }
+  .form_content_div label,
+  .form_content_div input {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .grid2_buttons {
+    gap: 8px;
+    margin-top: 32px;
   }
 }

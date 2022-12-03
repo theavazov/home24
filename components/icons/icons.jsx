@@ -224,15 +224,15 @@ export const search = (
       cx="11.7666"
       cy="11.7666"
       r="8.98856"
-      stroke="#020105"
-      strokeWidth="1.5"
+      stroke="currentColor"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M18.0183 18.4851L21.5423 22"
-      stroke="#020105"
-      strokeWidth="1.5"
+      stroke="currentColor"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -594,6 +594,31 @@ export const bell = (
       strokeLinecap="round"
       strokeLinejoin="round"
       d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+    />
+  </svg>
+);
+
+export const backArrow = (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.25 12.2744L19.25 12.2744"
+      stroke="#200E32"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.2998 18.299L4.2498 12.275L10.2998 6.25"
+      stroke="#200E32"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

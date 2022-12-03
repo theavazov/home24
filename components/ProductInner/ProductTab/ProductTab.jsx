@@ -5,10 +5,6 @@ import styles from "./ProductTab.module.css";
 export default function ProductTab() {
   const [toggleState, setToggleState] = useState(1);
 
-  const toggleTab = (index) => {
-    setToggleState(index);
-  };
-
   return (
     <div className={styles.productTab}>
       <div className={styles.buttons_div}>

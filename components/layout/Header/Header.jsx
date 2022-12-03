@@ -22,7 +22,7 @@ import uz from "../../../media/uz.png";
 import ru from "../../../media/ru.png";
 import en from "../../../media/en.png";
 
-export default function Header({ isCatalogue, setIsCatalogue }) {
+export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
   const router = useRouter();
   const pathname = router.pathname;
   const [isLangs, setIsLangs] = useState(false);
@@ -42,7 +42,7 @@ export default function Header({ isCatalogue, setIsCatalogue }) {
   const english = useRef();
 
   return (
-    <header>
+    <header className={isSearch ? "hidden" : styles.header}>
       <div className={styles.header_top_div}>
         <div className={`container ${styles.header_top_div_inner}`}>
           <a href="#" className={styles.header_top_address}>
@@ -239,18 +239,14 @@ export default function Header({ isCatalogue, setIsCatalogue }) {
           </div>
         </div>
         <div className={styles.mobile_bottom}>
-          <div
-            className={styles.category_btn}
-            role="button"
-            onClick={() => setIsCatalogue(!isCatalogue)}
-          >
+          <Link href="/search" className={styles.category_btn} role="button">
             <div className={styles.hamburger}>
               <span className={isCatalogue ? styles.rotate45 : ""}></span>
               <span className={isCatalogue ? "hidden" : ""}></span>
               <span className={isCatalogue ? styles.rotateMinus45 : ""}></span>
             </div>
             <p>Каталог</p>
-          </div>
+          </Link>
           <div className={styles.search_div}>
             <input type="text" placeholder="Искать" />
             <button className={styles.search_btn}>{search}</button>
