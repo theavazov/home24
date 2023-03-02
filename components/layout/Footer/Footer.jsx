@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Footer.module.css";
+import styles from "./footer.module.css";
 import qr from "../../../media/qr.png";
 import {
   apple,

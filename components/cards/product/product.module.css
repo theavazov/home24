@@ -1,0 +1,147 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product_img {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border: 1px solid #f2f2fa;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product_img_big {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  border: 1px solid #f2f2fa;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product_img img,
+.product_img_big img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product_info {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-gray);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.info_top {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.product_prices_div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart_btn {
+  max-width: 32px;
+  width: 100%;
+  height: 32px;
+  background-color: var(--main-orange);
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart_btn:hover {
+  background-color: rgb(225, 116, 14);
+  transition: 0.3s;
+}
+
+.cart_btn svg {
+  width: 16px !important;
+  height: 16px !important;
+  transform: rotateY(180deg);
+  color: var(--white);
+}
+
+.current_pice {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black);
+}
+
+.old_pice {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray);
+  text-decoration-line: line-through;
+}
+
+.product_rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.product_rating span {
+  width: 100%;
+  font-size: 13px;
+  line-height: 12px;
+  color: var(--black);
+  font-weight: 300;
+}
+
+.info_desc {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--black);
+  margin-top: 8px;
+}
+
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--main-orange);
+  z-index: 1;
+}
+
+@media (max-width: 880px) {
+  .product_img {
+    height: 200px;
+  }
+  .current_pice {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .product_info {
+    padding: 0px;
+    background-color: var(--white);
+    border-radius: 0px;
+  }
+  .info_desc,
+  .old_pice {
+    font-size: 11px;
+    line-height: 15px;
+  }
+  .product_rating span {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

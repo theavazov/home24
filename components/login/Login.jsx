@@ -68,7 +68,7 @@ export default function LoginModal() {
             />
           </svg>
         </div>
-        <form className={styles.login_form}>
+        <form className={styles.login_form} onSubmit={saveUser}>
           <div
             className={
               isValidate
@@ -85,6 +85,7 @@ export default function LoginModal() {
                 onChange={(e) => {
                   setNumber(e.target.value);
                 }}
+                autoFocus={true}
                 type="text"
                 id="phone"
                 mask={"(00) 000 00 00"}
@@ -95,7 +96,7 @@ export default function LoginModal() {
               />
             </div>
           </div>
-          <button type="button" className="primary_btn" onClick={saveUser}>
+          <button type="button" className="primary_btn">
             Войти
           </button>
         </form>

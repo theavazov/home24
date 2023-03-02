@@ -23,23 +23,18 @@ import ru from "../../../media/ru.png";
 import en from "../../../media/en.png";
 
 export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
-  const router = useRouter();
-  const pathname = router.pathname;
+  const { pathname, locale, locales, asPath } = useRouter();
   const [isLangs, setIsLangs] = useState(false);
-
   const { setIsModal } = useContext(LoginContext);
   const { user } = useContext(UserContext);
   const [isUser, setIsUser] = useState(false);
+
   useEffect(() => {
     const storageUser = JSON.parse(localStorage.getItem("user"));
     if (storageUser !== null) {
       setIsUser(true);
     }
   }, []);
-
-  const uzbek = useRef();
-  const russian = useRef();
-  const english = useRef();
 
   return (
     <header className={isSearch ? "hidden" : styles.header}>
@@ -73,7 +68,7 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
                 role="button"
                 onClick={() => setIsLangs(!isLangs)}
               >
-                <p>Рус</p>
+                <p>{locale?.toUpperCase()}</p>
                 <span className={isLangs ? styles.rotate : styles.notrotate}>
                   {arrowDown}
                 </span>
@@ -85,36 +80,48 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
                     : styles.lang_options_div
                 }
               >
-                <div
-                  className={styles.lang}
-                  value="uz"
-                  role={"button"}
-                  ref={uzbek}
-                  onClick={(e) => console.log(e.target.parentElement)}
-                >
-                  <p>O’zbekcha</p>
-                  <Image src={uz} alt="uz" />
-                </div>
-                <div
-                  className={styles.lang}
-                  value="ru"
-                  role={"button"}
-                  ref={russian}
-                  onClick={(e) => console.log(e.target.parentElement)}
-                >
-                  <p>Русский</p>
-                  <Image src={ru} alt="ru" />
-                </div>
-                <div
-                  className={styles.lang}
-                  value="en"
-                  role={"button"}
-                  ref={english}
-                  onClick={(e) => console.log(e.target.parentElement)}
-                >
-                  <p>English</p>
-                  <Image src={en} alt="en" />
-                </div>
+                {locales.map((sl) => {
+                  if (sl === "ru") {
+                    return (
+                      <Link
+                        key={sl}
+                        href={asPath}
+                        locale={sl}
+                        className={styles.lang}
+                        onClick={() => setIsLangs(false)}
+                      >
+                        <p>Русский</p>
+                        <Image src={ru} alt="ru" />
+                      </Link>
+                    );
+                  } else if (sl === "uz") {
+                    return (
+                      <Link
+                        key={sl}
+                        href={asPath}
+                        locale={sl}
+                        className={styles.lang}
+                        onClick={() => setIsLangs(false)}
+                      >
+                        <p>O’zbekcha</p>
+                        <Image src={uz} alt="ru" />
+                      </Link>
+                    );
+                  } else if (sl === "en") {
+                    return (
+                      <Link
+                        key={sl}
+                        href={asPath}
+                        locale={sl}
+                        className={styles.lang}
+                        onClick={() => setIsLangs(false)}
+                      >
+                        <p>English</p>
+                        <Image src={en} alt="ru" />
+                      </Link>
+                    );
+                  }
+                })}
               </div>
             </div>
           </nav>
@@ -205,36 +212,48 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
                   : styles.lang_options_div
               }
             >
-              <div
-                className={styles.lang}
-                value="uz"
-                role={"button"}
-                ref={uzbek}
-                onClick={(e) => console.log(e.target.parentElement)}
-              >
-                <p>O’zbekcha</p>
-                <Image src={uz} alt="uz" />
-              </div>
-              <div
-                className={styles.lang}
-                value="ru"
-                role={"button"}
-                ref={russian}
-                onClick={(e) => console.log(e.target.parentElement)}
-              >
-                <p>Русский</p>
-                <Image src={ru} alt="ru" />
-              </div>
-              <div
-                className={styles.lang}
-                value="en"
-                role={"button"}
-                ref={english}
-                onClick={(e) => console.log(e.target.parentElement)}
-              >
-                <p>English</p>
-                <Image src={en} alt="en" />
-              </div>
+              {locales.map((sl) => {
+                if (sl === "ru") {
+                  return (
+                    <Link
+                      key={sl}
+                      href={asPath}
+                      locale={sl}
+                      className={styles.lang}
+                      onClick={() => setIsLangs(false)}
+                    >
+                      <p>Русский</p>
+                      <Image src={ru} alt="ru" />
+                    </Link>
+                  );
+                } else if (sl === "uz") {
+                  return (
+                    <Link
+                      key={sl}
+                      href={asPath}
+                      locale={sl}
+                      className={styles.lang}
+                      onClick={() => setIsLangs(false)}
+                    >
+                      <p>O’zbekcha</p>
+                      <Image src={uz} alt="ru" />
+                    </Link>
+                  );
+                } else if (sl === "en") {
+                  return (
+                    <Link
+                      key={sl}
+                      href={asPath}
+                      locale={sl}
+                      className={styles.lang}
+                      onClick={() => setIsLangs(false)}
+                    >
+                      <p>English</p>
+                      <Image src={en} alt="ru" />
+                    </Link>
+                  );
+                }
+              })}
             </div>
           </div>
         </div>

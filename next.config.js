@@ -1,7 +1,24 @@
+const withVideos = require("next-videos");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+  reactStrictMode: false,
+  i18n: {
+    locales: ["uz", "ru", "en"],
+    defaultLocale: "ru",
+    localeDetection: false,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*",
+      },
+    ],
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = withVideos(nextConfig);
