@@ -10,6 +10,8 @@ type Props = {
 };
 
 export function CategoryCard({ category, parent }: Props) {
+  console.log(category);
+
   const { locale } = useRouter();
 
   const title =

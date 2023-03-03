@@ -1,7 +1,6 @@
 import Head from "next/head";
-import FullBanner from "../../components/fullBanner/FullBanner";
+import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
 import { Layout } from "../../components/layout/layout";
-import MiddleText from "../../components/middleText/MiddleText";
 
 export default function Checkout() {
   return (
@@ -10,8 +9,6 @@ export default function Checkout() {
         <title>Home 24 | Checkout</title>
       </Head>
       <Layout>
-        <p>Checkout</p>
-        <MiddleText />
         <FullBanner />
       </Layout>
     </>

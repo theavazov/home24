@@ -1,13 +1,13 @@
-import styles from "./FullBanner.module.css";
+import styles from "./fullbanner.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import googleplay from "../../media/google-play.png";
-import appstore from "../../media/app-store.png";
-import qr from "../../media/qr.png";
-import phone1 from "../../media/fb-1.png";
-import phone2 from "../../media/fb-2.png";
+import googleplay from "../../../public/media/google-play.png";
+import appstore from "../../../public/media/app-store.png";
+import qr from "../../../public/media/qr.png";
+import phone1 from "../../../public/media/fb-1.png";
+import phone2 from "../../../public/media/fb-2.png";
 
-export default function FullBanner() {
+export function FullBanner() {
   return (
     <section className="section">
       <div className={`container ${styles.fullBanner_container}`}>

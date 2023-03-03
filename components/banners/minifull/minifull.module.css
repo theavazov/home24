@@ -1,0 +1,11 @@
+.banner {
+  background-color: #f9f9f9;
+}
+
+.banner_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 28px;
+}

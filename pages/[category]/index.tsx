@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import AsideNav from "../../components/AsideNav/AsideNav";
-import FullBanner from "../../components/fullBanner/FullBanner";
 import { arrowRight } from "../../components/icons/icons";
 import { CustomHead } from "../../components/layout/head";
 import { Layout } from "../../components/layout/layout";
-import MiddleText from "../../components/middleText/MiddleText";
 import { CategoriesContext } from "../../contexts/categories";
 import { CategoryCard } from "../../components/cards/category/category";
 import { endpoint } from "../_app";
+import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
 
 export default function CategoryPage() {
   const router = useRouter();
@@ -27,7 +25,6 @@ export default function CategoryPage() {
       <Layout>
         <section>
           <div className="container main_flex_content">
-            <AsideNav />
             <div id="mainContent" style={{ flex: "1 1 auto" }}>
               <div className="main_text_content">
                 <div className="page_node">
@@ -71,7 +68,6 @@ export default function CategoryPage() {
             <div className="products_grid"></div>
           </div>
         </section>
-        <MiddleText />
         <FullBanner />
       </Layout>
     </>

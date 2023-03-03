@@ -1,11 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
-import FullBanner from "../components/fullBanner/FullBanner";
-import { arrowRight } from "../components/icons/icons";
+import { FullBanner } from "../components/banners/fullbanner/fullbanner";
 import { Layout } from "../components/layout/layout";
-import MiddleText from "../components/middleText/MiddleText";
 import { NoneComponent } from "../components/NoneComponent/NoneComponent";
 import Product from "../components/Product/Product";
+import { Location } from "../components/utils/location/location";
 import image from "../media/comparisons-img.png";
 
 export default function Comparisons() {
@@ -14,6 +13,7 @@ export default function Comparisons() {
     desc: "Добавляйте товары к сравнению характеристики выбирайте самый подходящий вам товар",
     image: image,
   };
+
   return (
     <>
       <Head>
@@ -23,16 +23,11 @@ export default function Comparisons() {
       <Layout>
         <section>
           <div className="container">
-            <div className="main_text_content">
-              <div className="page_node">
-                <Link href="/" className="page_node_element active">
-                  Главная
-                </Link>
-                {arrowRight}
-                <p className="page_node_element">Сравнение</p>
-              </div>
-              <p className="page_main_title">Список сравнения</p>
-            </div>
+            <Location
+              location={"Сравнение"}
+              title={"Список сравнения"}
+              products={"0"}
+            />
             <NoneComponent info={info} />
           </div>
         </section>
@@ -47,7 +42,6 @@ export default function Comparisons() {
             <div className="products_grid"></div>
           </div>
         </section>
-        <MiddleText />
         <FullBanner />
       </Layout>
     </>

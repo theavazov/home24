@@ -1,6 +1,6 @@
-import styles from "./MiddleText.module.css";
+import styles from "./text.module.css";
 
-export default function MiddleText() {
+export function MiddleText() {
   return (
     <section className="section">
       <div className="container">

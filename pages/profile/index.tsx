@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import FullBanner from "../../components/fullBanner/FullBanner";
 import {
   arrowRight,
   bell,
@@ -12,10 +11,10 @@ import {
 } from "../../components/icons/icons";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
-import { LoginContext } from "../../contexts/LoginContext";
 import styles from "./profile.module.css";
 import logo from "../../media/logo.png";
 import { useRouter } from "next/router";
+import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
 
 export default function Profile() {
   const [isLogout, setIsLogout] = useState(false);
@@ -26,7 +25,6 @@ export default function Profile() {
   //   if (localStorageUser !== null) setStorageUser(localStorageUser);
   // }, []);
 
-  const { setIsModal } = useContext(LoginContext);
   return (
     <>
       <Head>
@@ -120,13 +118,7 @@ export default function Profile() {
                 </div> */}
               </div>
             </div>
-            <div className={styles.mobile_content}>
-              {storageUser !== null ? (
-                <FullUser user={storageUser} setIsLogout={setIsLogout} />
-              ) : (
-                <EmptyUser setIsModal={setIsModal} />
-              )}
-            </div>
+            <div className={styles.mobile_content}></div>
           </div>
         </section>
         <FullBanner />

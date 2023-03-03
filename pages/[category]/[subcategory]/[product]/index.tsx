@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import FullBanner from "../../../../components/fullBanner/FullBanner";
 import {
   arrowRight,
   cart,
@@ -11,7 +10,6 @@ import {
 import dostavka from "../../../../media/dostavka.png";
 import assistent from "../../../../media/expert.png";
 import { Layout } from "../../../../components/layout/layout";
-import MiddleText from "../../../../components/middleText/MiddleText";
 import Product from "../../../../components/Product/Product";
 import ProductTab from "../../../../components/ProductInner/ProductTab/ProductTab";
 import styles from "./product.module.css";
@@ -19,6 +17,7 @@ import Image from "next/image";
 import ProductSwiper from "../../../../components/ProductInner/ProductSwiper/ProductSwiper";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { FullBanner } from "../../../../components/banners/fullbanner/fullbanner";
 
 export default function SingleProductPage() {
   const router = useRouter();
@@ -76,7 +75,6 @@ export default function SingleProductPage() {
             <div className="products_grid"></div>
           </div>
         </section>
-        <MiddleText />
         <FullBanner />
       </Layout>
     </>

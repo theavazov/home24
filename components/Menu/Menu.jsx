@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
-import { LoginContext } from "../../contexts/LoginContext";
 import { UserContext } from "../../contexts/UserContext";
 import { bag, grid4, heart, home, login } from "../icons/icons";
 import styles from "./Menu.module.css";
@@ -10,7 +9,6 @@ export default function Menu({ isCatalogue, setIsCatalogue }) {
   const router = useRouter();
   const pathname = router.pathname;
 
-  const { setIsModal } = useContext(LoginContext);
   const { user } = useContext(UserContext);
   const [isUser, setIsUser] = useState(false);
   useEffect(() => {

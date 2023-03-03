@@ -1,17 +1,20 @@
 import "../styles/main.css";
 import type { AppProps } from "next/app";
-import LoginModalProvider from "../contexts/LoginContext";
 import UserProvider from "../contexts/UserContext";
 import CategoriesContextProvider from "../contexts/categories";
+import ModalContextProvider from "../contexts/modal";
+import SearchContextProvider from "../contexts/search";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <UserProvider>
-      <LoginModalProvider>
-        <CategoriesContextProvider>
-          <Component {...pageProps} />
-        </CategoriesContextProvider>
-      </LoginModalProvider>
+      <ModalContextProvider>
+        <SearchContextProvider>
+          <CategoriesContextProvider>
+            <Component {...pageProps} />
+          </CategoriesContextProvider>
+        </SearchContextProvider>
+      </ModalContextProvider>
     </UserProvider>
   );
 }

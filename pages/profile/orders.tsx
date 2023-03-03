@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import FullBanner from "../../components/fullBanner/FullBanner";
 import { arrowRight } from "../../components/icons/icons";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
@@ -9,6 +8,7 @@ import ordersImage from "../../media/active_orders.png";
 import Image from "next/image";
 import { useState } from "react";
 import { Logout } from "./index";
+import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
 
 export default function Orders() {
   const [isLogout, setIsLogout] = useState(false);

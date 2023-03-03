@@ -1,43 +1,67 @@
 import {
   arrowDown,
-  bag,
-  heart,
   instagram,
   location,
-  login,
   search,
-  swap,
   telegram,
 } from "../../icons/icons";
-import styles from "./Header.module.css";
+import styles from "./header.module.css";
 import logo from "../../../media/logo.png";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useRef, useState } from "react";
-import { LoginContext } from "../../../contexts/LoginContext";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import MainMenu from "../../MainMenu/MainMenu";
 import uz from "../../../media/uz.png";
 import ru from "../../../media/ru.png";
 import en from "../../../media/en.png";
+import { ModalContext } from "../../../contexts/modal";
+import { bag, swap, heart, login } from "../../../public/icons";
+import { SearchContext } from "../../../contexts/search";
 
-export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
-  const { pathname, locale, locales, asPath } = useRouter();
+export function Header({
+  isCatalogue,
+  setIsCatalogue,
+}: {
+  isCatalogue: boolean;
+  setIsCatalogue: Function;
+}) {
+  const { pathname, locale, locales, asPath, push } = useRouter();
   const [isLangs, setIsLangs] = useState(false);
-  const { setIsModal } = useContext(LoginContext);
-  const { user } = useContext(UserContext);
-  const [isUser, setIsUser] = useState(false);
+  const { setVariant, setIsModal } = useContext(ModalContext);
+  const { query, setQuery } = useContext(SearchContext);
 
-  useEffect(() => {
-    const storageUser = JSON.parse(localStorage.getItem("user"));
-    if (storageUser !== null) {
-      setIsUser(true);
-    }
-  }, []);
+  const navigation = [
+    {
+      title: "Сравнение",
+      path: "/comparisons",
+      icon: swap,
+      isActive: pathname === "/comparisons" ? true : false,
+    },
+    {
+      title: "Избранное",
+      path: "/wishes",
+      icon: heart,
+      isActive: pathname === "/wishes" ? true : false,
+    },
+    {
+      title: "Корзина",
+      path: "/cart",
+      icon: bag,
+      isActive: pathname === "/cart" ? true : false,
+    },
+  ];
+
+  // useEffect(() => {
+  //   const storageUser = JSON.parse(localStorage.getItem("user"));
+  //   if (storageUser !== null) {
+  //     setIsUser(true);
+  //   }
+  // }, []);
 
   return (
-    <header className={isSearch ? "hidden" : styles.header}>
+    <header className={styles.header}>
       <div className={styles.header_top_div}>
         <div className={`container ${styles.header_top_div_inner}`}>
           <a href="#" className={styles.header_top_address}>
@@ -68,7 +92,7 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
                 role="button"
                 onClick={() => setIsLangs(!isLangs)}
               >
-                <p>{locale?.toUpperCase()}</p>
+                <p className={styles.locale}>{locale}</p>
                 <span className={isLangs ? styles.rotate : styles.notrotate}>
                   {arrowDown}
                 </span>
@@ -80,7 +104,7 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
                     : styles.lang_options_div
                 }
               >
-                {locales.map((sl) => {
+                {locales?.map((sl) => {
                   if (sl === "ru") {
                     return (
                       <Link
@@ -143,50 +167,52 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
           </div>
           <p>Каталог</p>
         </div>
-        <div className={styles.search_div}>
-          <input type="text" placeholder="Искать" />
-          <button className={styles.search_btn}>{search}</button>
-        </div>
+        <form
+          className={styles.search_div}
+          onSubmit={() => {
+            push(`/search?q=${query}`);
+            console.log(query);
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Искать"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+            required
+          />
+          <button type="submit" className={styles.search_btn}>
+            {search}
+          </button>
+        </form>
         <div className={styles.extra_div}>
-          <Link
-            href="/comparisons"
-            className={
-              pathname == "/comparisons"
-                ? `${styles.gap8div_active} ${styles.gap8_div}`
-                : `${styles.gap8_div}`
-            }
+          {navigation.map((nav: any, i: number) => {
+            return (
+              <Link
+                key={i}
+                href={nav.path}
+                className={
+                  nav.isActive
+                    ? `${styles.extra_nav} ${styles.active}`
+                    : `${styles.extra_nav}`
+                }
+              >
+                {nav.icon}
+                {nav.title}
+              </Link>
+            );
+          })}
+          <div
+            className={styles.extra_nav}
+            onClick={() => {
+              setVariant("check");
+              setIsModal(true);
+            }}
           >
-            {swap}
-            <p>Сравнение</p>
-          </Link>
-          <Link
-            href="/wishes"
-            className={
-              pathname == "/wishes"
-                ? `${styles.gap8div_active} ${styles.gap8_div}`
-                : `${styles.gap8_div}`
-            }
-          >
-            {heart}
-            <p>Избранное</p>
-          </Link>
-          <Link
-            href="/cart/"
-            className={
-              pathname.includes("cart")
-                ? `${styles.gap8div_active} ${styles.gap8_div}`
-                : `${styles.gap8_div}`
-            }
-          >
-            {bag}
-            <span className={styles.bags_products}>99+</span>
-            <p>Корзина</p>
-          </Link>
-          {isUser ? (
-            <UserLink user={user} />
-          ) : (
-            <ModalOpener setIsModal={setIsModal} />
-          )}
+            {login} Войти
+          </div>
         </div>
       </div>
       <div className={styles.mobile_header}>
@@ -200,7 +226,7 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
               role="button"
               onClick={() => setIsLangs(!isLangs)}
             >
-              <p>Рус</p>
+              <p className={styles.locale}>{locale}</p>
               <span className={isLangs ? styles.rotate : styles.notrotate}>
                 {arrowDown}
               </span>
@@ -212,7 +238,7 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
                   : styles.lang_options_div
               }
             >
-              {locales.map((sl) => {
+              {locales?.map((sl) => {
                 if (sl === "ru") {
                   return (
                     <Link
@@ -277,7 +303,7 @@ export default function Header({ isCatalogue, setIsCatalogue, isSearch }) {
   );
 }
 
-const UserLink = ({ user }) => {
+const UserLink = ({ user }: { user: any }) => {
   return (
     <Link href="/profile/orders" className={styles.gap8_div}>
       {login}
@@ -286,7 +312,7 @@ const UserLink = ({ user }) => {
   );
 };
 
-const ModalOpener = ({ setIsModal }) => {
+const ModalOpener = ({ setIsModal }: { setIsModal: Function }) => {
   return (
     <div
       role={"button"}

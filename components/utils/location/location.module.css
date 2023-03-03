@@ -1,0 +1,40 @@
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location_nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray);
+}
+
+a.node {
+  color: #ff6418;
+}
+
+.node svg {
+  width: 16px;
+  height: 16px;
+}
+
+.title {
+  font-family: var(--neue-medium), sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 500;
+  color: var(--black);
+}

@@ -1,11 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
-import FullBanner from "../../components/fullBanner/FullBanner";
+import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
 import { arrowRight } from "../../components/icons/icons";
 import { Layout } from "../../components/layout/layout";
-import MiddleText from "../../components/middleText/MiddleText";
 import { NoneComponent } from "../../components/NoneComponent/NoneComponent";
 import Product from "../../components/Product/Product";
+import { BestsellersSection } from "../../components/universal/bestseller/bestseller";
+import { Location } from "../../components/utils/location/location";
 import image from "../../media/cart-img.png";
 
 export default function Cart() {
@@ -14,6 +15,7 @@ export default function Cart() {
     desc: "Но вы всегда можете ее наполнить",
     image: image,
   };
+
   return (
     <>
       <Head>
@@ -23,32 +25,11 @@ export default function Cart() {
       <Layout>
         <section>
           <div className="container">
-            <div className="main_text_content">
-              <div className="page_node">
-                <Link href="/" className="page_node_element active">
-                  Главная
-                </Link>
-                {arrowRight}
-                <p className="page_node_element">Корзина</p>
-              </div>
-              <p className="page_main_title">Корзина</p>
-            </div>
+            <Location location={"Корзина"} products={"0"} />
             <NoneComponent info={info} />
-            {/* <Link href="/cart/checkout">Oformleniye</Link> */}
           </div>
         </section>
-        <section className="section">
-          <div className="container">
-            <div className="titles_div">
-              <p className="category_title">Хиты продаж</p>
-              <Link href="#" className="category_view_all">
-                Все товары
-              </Link>
-            </div>
-            <div className="products_grid"></div>
-          </div>
-        </section>
-        <MiddleText />
+        <BestsellersSection />
         <FullBanner />
       </Layout>
     </>

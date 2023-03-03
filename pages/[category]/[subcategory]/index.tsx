@@ -2,11 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import AsideNav from "../../../components/AsideNav/AsideNav";
-import FullBanner from "../../../components/fullBanner/FullBanner";
+import { FullBanner } from "../../../components/banners/fullbanner/fullbanner";
 import { arrowRight, grid4, grid9 } from "../../../components/icons/icons";
 import { Layout } from "../../../components/layout/layout";
-import MiddleText from "../../../components/middleText/MiddleText";
 import Product from "../../../components/Product/Product";
 import styles from "./subcategories.module.css";
 
@@ -26,7 +24,6 @@ export default function SubcategoryPage() {
       <Layout>
         <section>
           <div className="container main_flex_content">
-            <AsideNav />
             <div id="mainContent" style={{ flex: "1 1 auto" }}>
               <div
                 style={{
@@ -87,7 +84,6 @@ export default function SubcategoryPage() {
                 <Product isGrid={isGrid} />
                 <Product isGrid={isGrid} />
               </section>
-              <MiddleText />
             </div>
           </div>
         </section>

@@ -80,12 +80,6 @@
   padding: 10px 18px;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.category_btn:active {
-  transform: scale(0.95);
-  transition: 0.3s;
 }
 
 .hamburger {
@@ -110,6 +104,7 @@
   font-size: 18px;
   line-height: 24px;
   color: var(--main-orange);
+  margin-top: 2px !important;
 }
 
 .search_div {
@@ -153,7 +148,7 @@
   gap: 40px;
 }
 
-.gap8_div {
+.extra_nav {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -161,21 +156,23 @@
   cursor: pointer;
   position: relative;
   transition: 0.3s !important;
+  font-size: 16px;
+  line-height: 24px;
 }
 
-.gap8_div:hover {
+.extra_nav:hover {
   color: var(--main-orange) !important;
   transition: 0.3s !important;
 }
 
-.gap8div_active {
+.extra_nav.active {
   color: var(--main-orange);
 }
 
-.gap8_div p {
+.extra_nav svg {
+  max-width: 24px;
   width: 100%;
-  font-size: 16px;
-  line-height: 24px;
+  height: 24px;
 }
 
 .bags_products {
@@ -216,6 +213,10 @@
 .header_top_link svg {
   width: 20px;
   height: 20px;
+}
+
+.locale {
+  text-transform: capitalize;
 }
 
 .header_top_link span {

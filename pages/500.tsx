@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import FullBanner from "../components/fullBanner/FullBanner";
+import { FullBanner } from "../components/banners/fullbanner/fullbanner";
 import { Layout } from "../components/layout/layout";
-import ServerErrorImage from "../media/500-img.png";
+import ServerErrorImage from "../public/media/500-img.png";
+import styles from "../styles/error.module.css";
 
 export default function ServerError() {
   return (
@@ -13,18 +14,18 @@ export default function ServerError() {
       </Head>
       <Layout>
         <section>
-          <div className="container error_container">
-            <div className="errorImage">
+          <div className={`container ${styles.error_container}`}>
+            <div className={styles.errorImage}>
               <Image src={ServerErrorImage} alt="Error Image" />
             </div>
-            <div className="error_content">
-              <div className="error_texts">
-                <p className="error_title">
+            <div className={styles.error_content}>
+              <div className={styles.error_texts}>
+                <p className={styles.error_title}>
                   Мы разберёмся с этим недоразумием, а пока вернитесь в главную
                   страницу
                 </p>
               </div>
-              <Link className="secondary_btn" href="/">
+              <Link href="/" className="secondary_btn">
                 На главную
               </Link>
             </div>

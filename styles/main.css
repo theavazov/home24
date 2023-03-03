@@ -46,28 +46,50 @@
   text-decoration: none !important;
 }
 
-input:focus {
+@keyframes shine {
+  to {
+    background-position: right -40px top 0;
+  }
+}
+
+.skeleton {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  background-size: 40px 100%;
+  background-repeat: no-repeat;
+  background-position: left -40px top;
+  animation: shine 2s ease infinite;
+}
+
+input:focus,
+textarea:focus {
   outline: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
   margin: 0 !important;
 }
 
-#app {
+.wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 main {
   flex: 1 1 auto;
-  padding-top: 128px;
-}
-
-.main {
-  padding-top: 32px;
+  padding-top: calc(128px);
 }
 
 .container {
@@ -103,12 +125,6 @@ main {
 .category_view_all:hover {
   text-decoration: underline !important;
   color: var(--main-orange) !important;
-}
-
-.titles_div {
-  display: flex;
-  align-items: flex-end;
-  gap: 24px;
 }
 
 .primary_btn {
@@ -197,25 +213,16 @@ main {
   transition: 0.3s;
 }
 
-button {
-  transition: 0.3s;
-}
-
-.primary_btn:active,
-.secondary_btn:active,
-.disabled_btn:active {
-  transform: scale(0.95);
-  box-shadow: none !important;
-  transition: 0.3s;
-}
-
-.disabled_btn:active,
-.disabled_text_btn:active {
-  transform: none;
-}
-
-.page_node {
+.section_inner {
   display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.products_container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
 }
 
 .qr_div {
@@ -298,65 +305,6 @@ button {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 24px;
-}
-
-/* === 404 === */
-.error_container {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-top: 32px;
-  align-items: center;
-  justify-content: center;
-}
-
-.errorImage {
-  position: relative;
-  max-width: 860px;
-  width: 100%;
-  height: 570px;
-  margin: 0 auto;
-}
-
-.errorImage img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.error_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
-
-.error_texts {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-}
-
-.error_desc {
-  font-family: "TT Firs Neue", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--gray);
-  text-align: center;
-}
-
-.error_title {
-  font-family: "TT Firs Neue", sans-serif;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 48px;
-  color: #000;
-  text-align: center;
-  max-width: 600px;
 }
 
 .grid6 {
@@ -524,15 +472,21 @@ a.page_node_element:hover {
   transition: 0.3s;
 }
 
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 1800px) {
   .qr_div {
     gap: 12px;
   }
   .qr_text {
     font-size: 16px;
-  }
-  .errorImage {
-    height: 460px;
   }
 }
 
@@ -549,15 +503,9 @@ a.page_node_element:hover {
   .grid6_brands {
     grid-template-columns: repeat(4, 1fr);
   }
-  .errorImage {
-    height: 360px;
-  }
 }
 
 @media (max-width: 880px) {
-  .main {
-    padding-top: 16px;
-  }
   .section {
     margin-top: 48px;
   }
@@ -624,17 +572,6 @@ a.page_node_element:hover {
     max-width: 80px;
     height: 80px;
   }
-  .errorImage {
-    height: 320px;
-  }
-  .error_title {
-    font-size: 18px;
-    line-height: 26px;
-  }
-  .error_desc {
-    font-size: 16px;
-    line-height: 24px;
-  }
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
@@ -669,16 +606,5 @@ a.page_node_element:hover {
   .qr_text {
     font-size: 14px;
     line-height: 22px;
-  }
-  .error_container {
-    gap: 24px;
-  }
-  .errorImage {
-    height: 240px;
-  }
-  .error_content {
-    max-width: 100%;
-    width: 100%;
-    gap: 10px;
   }
 }

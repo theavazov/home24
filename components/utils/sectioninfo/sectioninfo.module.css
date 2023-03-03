@@ -1,0 +1,25 @@
+.info {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.title {
+  font-family: var(--neue-medium), sans-serif;
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.more_link {
+  font-size: 20px;
+  line-height: 28px;
+  color: #ff6418;
+  margin-bottom: 8px;
+}
+
+.more_link:hover {
+  color: #ff6418;
+  text-decoration: underline !important;
+}

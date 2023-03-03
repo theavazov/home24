@@ -11,10 +11,12 @@ export default function CategoriesContextProvider({ children }) {
     setIsLoading(true);
     getCategories()
       .then((res) => {
-        setCategories(res.categories.data);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 1000);
+        if (res.categories.data > 0) {
+          setCategories(res.categories.data);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
+        }
       })
       .catch((e) => console.log(e));
   }, []);
