@@ -1,3 +1,7 @@
+.productTab {
+  max-width: 1200px;
+}
+
 .buttons_div {
   display: flex;
   align-items: center;

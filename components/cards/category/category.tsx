@@ -10,8 +10,6 @@ type Props = {
 };
 
 export function CategoryCard({ category, parent }: Props) {
-  console.log(category);
-
   const { locale } = useRouter();
 
   const title =
@@ -29,7 +27,12 @@ export function CategoryCard({ category, parent }: Props) {
       className={styles.category}
     >
       <div className={styles.category_img}>
-        <Image src={category.lg_img ? category.lg_img : noimage} alt={title} />
+        <Image
+          src={category.lg_img ? category.lg_img : noimage}
+          alt={title}
+          width={200}
+          height={150}
+        />
       </div>
       <div className={styles.category_content}>
         <p className={styles.category_name}>{title}</p>

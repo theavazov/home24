@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 6;
   background-color: var(--white);
+  border-bottom: 1px solid #eeee;
 }
 
 .header_top_div {
@@ -138,8 +139,9 @@
   cursor: pointer;
 }
 
-.search_btn:active {
-  transform: none;
+.search_btn svg {
+  width: 24px;
+  height: 24px;
 }
 
 .extra_div {

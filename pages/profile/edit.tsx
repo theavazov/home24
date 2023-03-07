@@ -2,11 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import { Logout } from "./index";
-import { arrowRight } from "../../components/icons/icons";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
 import styles from "./profile.module.css";
-import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
+import { Location } from "../../components/utils/location/location";
+import { arrowRight } from "../../public/icons";
+import { MiniFullBanner } from "../../components/banners/minifull/minifull";
 
 export default function Edit() {
   const [isLogout, setIsLogout] = useState(false);
@@ -18,18 +19,11 @@ export default function Edit() {
       <Layout>
         <section>
           <div className="container">
-            <div className="main_text_content">
-              <div className="page_node">
-                <Link href="/" className="page_node_element active">
-                  Главная
-                </Link>
-                {arrowRight}
-                <p className="page_node_element">Личный кабинет</p>
-                {arrowRight}
-                <p className="page_node_element">Изменить</p>
-              </div>
-              <p className="page_main_title">Личный кабинет</p>
-            </div>
+            <Location
+              location={"Личный кабинет"}
+              category={{ title: "Личный кабинет", path: "/profile" }}
+              title={"Изменить"}
+            />
           </div>
         </section>
         <section>
@@ -206,7 +200,7 @@ export default function Edit() {
             </div>
           </div>
         </section>
-        <FullBanner />
+        <MiniFullBanner />
         {isLogout && <Logout setIsLogout={setIsLogout} />}
       </Layout>
     </>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { star } from "../../icons/icons";
+import { star } from "../../../public/icons";
 import styles from "./ProductTab.module.css";
 
 export default function ProductTab() {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./ProfileNav.module.css";
-import { login, cart, logout } from "../../icons/icons";
+import { login, cart, logout } from "../../../public/icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 

@@ -1,21 +1,11 @@
 import Head from "next/head";
-import Link from "next/link";
 import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
-import { arrowRight } from "../../components/icons/icons";
 import { Layout } from "../../components/layout/layout";
-import { NoneComponent } from "../../components/NoneComponent/NoneComponent";
-import Product from "../../components/Product/Product";
 import { BestsellersSection } from "../../components/universal/bestseller/bestseller";
+import { EmptyComponent } from "../../components/universal/empty/empty";
 import { Location } from "../../components/utils/location/location";
-import image from "../../media/cart-img.png";
 
 export default function Cart() {
-  const info = {
-    title: "В корзине пока нет товаров",
-    desc: "Но вы всегда можете ее наполнить",
-    image: image,
-  };
-
   return (
     <>
       <Head>
@@ -26,7 +16,7 @@ export default function Cart() {
         <section>
           <div className="container">
             <Location location={"Корзина"} products={"0"} />
-            <NoneComponent info={info} />
+            <EmptyComponent variant="cart" />
           </div>
         </section>
         <BestsellersSection />

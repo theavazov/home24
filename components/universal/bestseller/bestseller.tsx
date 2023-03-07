@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getPopularProducts } from "../../../server/products";
+import { getBestsellerProducts } from "../../../server/products";
+import ProductCard from "../../cards/product/product";
 import { ProductsLoader } from "../../utils/loaders/loaders";
 import { SectionInfo } from "../../utils/sectioninfo/sectioninfo";
 import styles from "./bestseller.module.css";
@@ -10,12 +11,10 @@ export function BestsellersSection() {
 
   useEffect(() => {
     setIsLoading(true);
-    getPopularProducts()
+    getBestsellerProducts()
       .then((res) => {
-        if (res.data > 0) {
-          setProducts(res.data);
-          setIsLoading(false);
-        }
+        setProducts(res.data);
+        setIsLoading(false);
       })
       .catch((e) => console.log(e));
   }, []);
@@ -30,7 +29,13 @@ export function BestsellersSection() {
         {isLoading ? (
           <ProductsLoader />
         ) : (
-          <div className="products_container"></div>
+          <div className="products_container">
+            {products.length > 0
+              ? products.map((product: any, i: number) => {
+                  return <ProductCard key={i} product={product} />;
+                })
+              : null}
+          </div>
         )}
       </div>
     </section>

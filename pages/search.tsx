@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useContext } from "react";
 import { FullBanner } from "../components/banners/fullbanner/fullbanner";
 import { Layout } from "../components/layout/layout";
+import { BestsellersSection } from "../components/universal/bestseller/bestseller";
 import { Location } from "../components/utils/location/location";
 import { SearchContext } from "../contexts/search";
 import styles from "../styles/search.module.css";
@@ -23,22 +24,9 @@ export default function Search() {
             />
           </div>
         </section>
+        <BestsellersSection />
         <FullBanner />
       </Layout>
     </>
   );
-}
-
-{
-  /* <section>
-          <div className="container">
-            <div className={styles.search_top}>
-              {backArrow}
-              <div className={styles.search_div}>
-                <div className={styles.search_icon}>{search}</div>
-                <input type="text" placeholder="Искать" />
-              </div>
-            </div>
-          </div>
-        </section> */
 }

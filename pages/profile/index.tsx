@@ -2,19 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import {
-  arrowRight,
-  bell,
-  cart,
-  edit,
-  swap,
-} from "../../components/icons/icons";
+import { arrowRight, bell, cart, edit, swap } from "../../public/icons";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
 import styles from "./profile.module.css";
-import logo from "../../media/logo.png";
+import logo from "../../public/media/logo.png";
 import { useRouter } from "next/router";
-import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
+import { Location } from "../../components/utils/location/location";
+import { MiniFullBanner } from "../../components/banners/minifull/minifull";
 
 export default function Profile() {
   const [isLogout, setIsLogout] = useState(false);
@@ -33,16 +28,7 @@ export default function Profile() {
       <Layout>
         <section>
           <div className="container">
-            <div className="main_text_content">
-              <div className="page_node">
-                <Link href="/" className="page_node_element active">
-                  Главная
-                </Link>
-                {arrowRight}
-                <p className="page_node_element">Личный кабинет</p>
-              </div>
-              <p className="page_main_title">Личный кабинет</p>
-            </div>
+            <Location location={"Личный кабинет"} />
           </div>
         </section>
         <section>
@@ -121,7 +107,7 @@ export default function Profile() {
             <div className={styles.mobile_content}></div>
           </div>
         </section>
-        <FullBanner />
+        <MiniFullBanner />
         {isLogout && <Logout setIsLogout={setIsLogout} />}
       </Layout>
     </>

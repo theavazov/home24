@@ -103,6 +103,12 @@
   height: 36px;
 }
 
+.googleplay svg {
+  width: 28px;
+  height: 28px;
+  margin-left: 5px;
+}
+
 .footer_copy_text {
   font-family: "Inter", sans-serif;
   font-size: 18px;

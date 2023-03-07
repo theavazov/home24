@@ -1,31 +1,20 @@
 import Head from "next/head";
-import Link from "next/link";
-import {
-  arrowRight,
-  cart,
-  hand,
-  heart,
-  swap,
-} from "../../../../components/icons/icons";
-import dostavka from "../../../../media/dostavka.png";
-import assistent from "../../../../media/expert.png";
+import { cart, hand, heart, swap } from "../../../../public/icons";
+import dostavka from "../../../../public/media/dostavka.png";
+import assistent from "../../../../public/media/expert.png";
 import { Layout } from "../../../../components/layout/layout";
-import Product from "../../../../components/Product/Product";
 import ProductTab from "../../../../components/ProductInner/ProductTab/ProductTab";
 import styles from "./product.module.css";
 import Image from "next/image";
 import ProductSwiper from "../../../../components/ProductInner/ProductSwiper/ProductSwiper";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { FullBanner } from "../../../../components/banners/fullbanner/fullbanner";
+import { Location } from "../../../../components/utils/location/location";
+import { BestsellersSection } from "../../../../components/universal/bestseller/bestseller";
+import { MiniFullBanner } from "../../../../components/banners/minifull/minifull";
 
 export default function SingleProductPage() {
   const router = useRouter();
   const { product } = router.query;
-
-  useEffect(() => {
-    console.log(product);
-  }, [router]);
 
   return (
     <>
@@ -35,47 +24,25 @@ export default function SingleProductPage() {
       <Layout>
         <section>
           <div className="container">
-            <div className="main_text_content">
-              <div className="page_node">
-                <Link href="/" className="page_node_element active">
-                  Главная
-                </Link>
-                {arrowRight}
-                <Link href="/dynamic" className="page_node_element active">
-                  Мебель
-                </Link>
-                {arrowRight}
-                <Link
-                  href="/dynamic/gamer"
-                  className="page_node_element active"
-                >
-                  Геймерские кресла
-                </Link>
-                {arrowRight}
-                <p className="page_node_element">Геймерское кресло Audi</p>
-              </div>
-            </div>
-            <section className={styles.product_main_div}>
+            <Location
+              location={"Product"}
+              category={{ title: "Мебель", path: "/dynamic" }}
+              subcategory={{
+                title: " Геймерские кресла",
+                path: "/dynamic/gamer",
+              }}
+            />
+            <div className={styles.product_main_div}>
               <div className={styles.product_info_container}>
                 <ProductSwiper />
                 <Options />
               </div>
               <ProductTab />
-            </section>
-          </div>
-        </section>
-        <section className="section">
-          <div className="container">
-            <div className="titles_div">
-              <p className="category_title">Хиты продаж</p>
-              <Link href="#" className="category_view_all">
-                Все товары
-              </Link>
             </div>
-            <div className="products_grid"></div>
           </div>
         </section>
-        <FullBanner />
+        <BestsellersSection />
+        <MiniFullBanner />
       </Layout>
     </>
   );

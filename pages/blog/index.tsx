@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
-import { Blog } from "..";
-import { arrowRight } from "../../components/icons/icons";
 import { Layout } from "../../components/layout/layout";
+import { Location } from "../../components/utils/location/location";
 
 export default function BlogPage() {
   return (
@@ -13,16 +11,7 @@ export default function BlogPage() {
       <Layout>
         <section>
           <div className="container">
-            <div className="main_text_content">
-              <div className="page_node">
-                <Link href="/" className="page_node_element active">
-                  Главная
-                </Link>
-                {arrowRight}
-                <p className="page_node_element">Блог</p>
-              </div>
-              <p className="page_main_title">Блог</p>
-            </div>
+            <Location location={"Блог"} />
           </div>
         </section>
         <section>

@@ -31,6 +31,22 @@ export function Location({
             Главная
           </Link>
           <span className={styles.node}>{arrowRight}</span>
+          {category ? (
+            <>
+              <Link href={category.path} className={styles.node}>
+                {category.title}
+              </Link>
+              <span className={styles.node}>{arrowRight}</span>
+            </>
+          ) : null}
+          {subcategory ? (
+            <>
+              <Link href={subcategory.path} className={styles.node}>
+                {subcategory.title}
+              </Link>
+              <span className={styles.node}>{arrowRight}</span>
+            </>
+          ) : null}
           <p className={styles.node}>{location}</p>
         </nav>
         <h2 className={styles.title}>{title ? title : location}</h2>

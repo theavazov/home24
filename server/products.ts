@@ -9,3 +9,13 @@ export async function getPopularProducts() {
 
   return data;
 }
+
+export async function getBestsellerProducts() {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_ENDPOINT}/products?type=bestsellers`
+  );
+
+  const data = await res.data.products;
+
+  return data;
+}

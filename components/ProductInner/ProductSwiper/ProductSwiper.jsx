@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styles from "./ProductSwiper.module.css";
-import kreslo from "../../../media/kreslo-gamer.png";
-import kresloOfis from "../../../media/kresl-ofis.png";
-import { chat, star } from "../../icons/icons";
+import kreslo from "../../../public/media/kreslo-gamer.png";
+import kresloOfis from "../../../public/media/kresl-ofis.png";
+import { chat, star } from "../../../public/icons";
 import { useState } from "react";
 
 export default function ProductSwiper() {

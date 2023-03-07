@@ -17,9 +17,10 @@
   background-color: var(--white);
   border-radius: 4px;
   padding-block: 8px;
+  position: relative;
 }
 
-.card_img {
+.image .card_img {
   display: inline-block;
   max-width: 150px;
   width: 100%;

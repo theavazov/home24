@@ -1,0 +1,36 @@
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-top: 30px;
+}
+
+.main_image {
+  display: inline-block;
+  width: 390px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.component_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.component_texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.component_desc {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--gray);
+  max-width: 420px;
+  text-align: center;
+}

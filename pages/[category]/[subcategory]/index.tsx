@@ -1,21 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { FullBanner } from "../../../components/banners/fullbanner/fullbanner";
-import { arrowRight, grid4, grid9 } from "../../../components/icons/icons";
+import { arrowRight, grid4, grid9 } from "../../../public/icons";
 import { Layout } from "../../../components/layout/layout";
-import Product from "../../../components/Product/Product";
 import styles from "./subcategories.module.css";
+import { Location } from "../../../components/utils/location/location";
+import { MiniFullBanner } from "../../../components/banners/minifull/minifull";
 
 export default function SubcategoryPage() {
   const router = useRouter();
-  const { slug } = router.query; // subcategory
-  const [isGrid, setIsGrid] = useState(false);
+  const { subcategory } = router.query;
 
-  useEffect(() => {
-    console.log(slug);
-  }, [router]);
   return (
     <>
       <Head>
@@ -32,22 +27,9 @@ export default function SubcategoryPage() {
                   justifyContent: "space-between",
                 }}
               >
-                <div className="main_text_content">
-                  <div className="page_node">
-                    <Link href="/" className="page_node_element active">
-                      Главная
-                    </Link>
-                    {arrowRight}
-                    <Link href="/dynamic" className="page_node_element active">
-                      Мебель
-                    </Link>
-                    {arrowRight}
-                    <p className="page_node_element">Геймерские кресла</p>
-                  </div>
-                  <p className="page_main_title">Геймерские кресла </p>
-                </div>
+                <Location location={"Геймерские кресла"} />
                 <div className={styles.grid_btn_div}>
-                  <button
+                  {/* <button
                     onClick={() => setIsGrid(!isGrid)}
                     className={isGrid ? "" : styles.active}
                     style={{
@@ -72,22 +54,13 @@ export default function SubcategoryPage() {
                     }}
                   >
                     {grid4}
-                  </button>
+                  </button> */}
                 </div>
               </div>
-              <section className={isGrid ? "grid3" : "products_grid_5"}>
-                <Product isGrid={isGrid} />
-                <Product isGrid={isGrid} />
-                <Product isGrid={isGrid} />
-                <Product isGrid={isGrid} />
-                <Product isGrid={isGrid} />
-                <Product isGrid={isGrid} />
-                <Product isGrid={isGrid} />
-              </section>
             </div>
           </div>
         </section>
-        <FullBanner />
+        <MiniFullBanner />
       </Layout>
     </>
   );

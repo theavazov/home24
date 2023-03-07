@@ -8,7 +8,7 @@ export function BrandCard({ brand }: { brand: any }) {
   const { pathname } = useRouter();
 
   return (
-    <Link href={`/brands/slug`} className={styles.card}>
+    <Link href={`/brands/${brand.slug}`} className={styles.card}>
       <div className={styles.image}>
         {brand.lg_logo ? (
           <Image

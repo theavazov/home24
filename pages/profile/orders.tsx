@@ -1,14 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
-import { arrowRight } from "../../components/icons/icons";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
 import styles from "./profile.module.css";
-import ordersImage from "../../media/active_orders.png";
+import ordersImage from "../../public/media/active_orders.png";
 import Image from "next/image";
 import { useState } from "react";
 import { Logout } from "./index";
-import { FullBanner } from "../../components/banners/fullbanner/fullbanner";
+import { Location } from "../../components/utils/location/location";
+import { MiniFullBanner } from "../../components/banners/minifull/minifull";
 
 export default function Orders() {
   const [isLogout, setIsLogout] = useState(false);
@@ -20,18 +20,11 @@ export default function Orders() {
       <Layout>
         <section>
           <div className="container">
-            <div className="main_text_content">
-              <div className="page_node">
-                <Link href="/" className="page_node_element active">
-                  Главная
-                </Link>
-                {arrowRight}
-                <p className="page_node_element">Личный кабинет</p>
-                {arrowRight}
-                <p className="page_node_element">Мои заказы</p>
-              </div>
-              <p className="page_main_title">Мои заказы</p>
-            </div>
+            <Location
+              location={"Мои заказы"}
+              title={"Мои заказы"}
+              category={{ title: "Личный кабинет", path: "/profile" }}
+            />
           </div>
         </section>
         <section>
@@ -47,7 +40,7 @@ export default function Orders() {
             </div>
           </div>
         </section>
-        <FullBanner />
+        <MiniFullBanner />
         {isLogout && <Logout setIsLogout={setIsLogout} />}
       </Layout>
     </>

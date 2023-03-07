@@ -28,22 +28,20 @@ export default function Brands() {
       </Head>
       <Layout>
         <section>
-          <div className="container">
+          <div className="container section_inner">
             <Location location={"Популярные бренды"} />
+            {isLoading ? (
+              <BrandsLoader />
+            ) : (
+              <div className="container brands_container">
+                {brands.length > 0
+                  ? brands.map((brand: any, i: number) => {
+                      return <BrandCard key={i} brand={brand} />;
+                    })
+                  : null}
+              </div>
+            )}
           </div>
-        </section>
-        <section>
-          {isLoading ? (
-            <BrandsLoader />
-          ) : (
-            <div className="container grid6_brands">
-              {brands.length > 0
-                ? brands.map((brand: any, i: number) => {
-                    return <BrandCard key={i} brand={brand} />;
-                  })
-                : null}
-            </div>
-          )}
         </section>
         <MiniFullBanner />
       </Layout>

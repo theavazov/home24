@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./footer.module.css";
-import qr from "../../../media/qr.png";
+import qr from "../../../public/media/qr.png";
 import { Accordion } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/router";
@@ -217,11 +217,9 @@ export function Footer() {
               <a
                 href="#"
                 aria-label="googleplay"
-                className={styles.footer_icon_div}
+                className={`${styles.footer_icon_div} ${styles.googleplay}`}
               >
-                <span style={{ marginLeft: "3px", marginTop: "2px" }}>
-                  {googleplay}
-                </span>
+                {googleplay}
               </a>
             </nav>
           </div>

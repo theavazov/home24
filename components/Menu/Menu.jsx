@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
-import { bag, grid4, heart, home, login } from "../icons/icons";
+import { bag, grid4, heart, home, login } from "../../public/icons";
 import styles from "./Menu.module.css";
 
 export default function Menu({ isCatalogue, setIsCatalogue }) {

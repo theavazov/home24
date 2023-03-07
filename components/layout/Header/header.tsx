@@ -1,23 +1,26 @@
-import {
-  arrowDown,
-  instagram,
-  location,
-  search,
-  telegram,
-} from "../../icons/icons";
 import styles from "./header.module.css";
-import logo from "../../../media/logo.png";
+import logo from "../../../public/media/logo.png";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import MainMenu from "../../MainMenu/MainMenu";
-import uz from "../../../media/uz.png";
-import ru from "../../../media/ru.png";
-import en from "../../../media/en.png";
+import uz from "../../../public/media/uz.png";
+import ru from "../../../public/media/ru.png";
+import en from "../../../public/media/en.png";
 import { ModalContext } from "../../../contexts/modal";
-import { bag, swap, heart, login } from "../../../public/icons";
+import {
+  bag,
+  swap,
+  heart,
+  login,
+  arrowDown,
+  instagram,
+  location,
+  search,
+  telegram,
+} from "../../../public/icons";
 import { SearchContext } from "../../../contexts/search";
 
 export function Header({

@@ -2,7 +2,7 @@ import styles from "./loaders.module.css";
 
 export function BrandsLoader() {
   return (
-    <div className="container grid6_brands">
+    <div className="container brands_container">
       <div className={`skeleton ${styles.brand}`}></div>
       <div className={`skeleton ${styles.brand}`}></div>
       <div className={`skeleton ${styles.brand}`}></div>
@@ -15,7 +15,7 @@ export function BrandsLoader() {
 
 export function CategoriesLoader() {
   return (
-    <div className="grid6">
+    <div className="categories_container">
       <div className={`skeleton ${styles.category}`}></div>
       <div className={`skeleton ${styles.category}`}></div>
       <div className={`skeleton ${styles.category}`}></div>
@@ -28,7 +28,7 @@ export function CategoriesLoader() {
 
 export function BlogsLoader() {
   return (
-    <div>
+    <div className="blog_container">
       <div className={`skeleton ${styles.blog}`}></div>
       <div className={`skeleton ${styles.blog}`}></div>
       <div className={`skeleton ${styles.blog}`}></div>

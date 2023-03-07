@@ -24,6 +24,11 @@
   color: var(--black);
 }
 
+.menu_item svg {
+  width: 24px;
+  height: 24px;
+}
+
 .menu_item p {
   font-family: "TT Firs Neue", "Roboto Flex", "Inter", sans-serif;
   font-size: 12px;
