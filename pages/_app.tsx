@@ -6,7 +6,7 @@ import ModalContextProvider from "../contexts/modal";
 import SearchContextProvider from "../contexts/search";
 import OrderContextProvider from "../contexts/orders";
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <UserProvider>
       <OrderContextProvider>
@@ -21,7 +21,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     </UserProvider>
   );
 }
-
-export default MyApp;
 
 export const endpoint = "https://home24-ndc.vercel.app";
