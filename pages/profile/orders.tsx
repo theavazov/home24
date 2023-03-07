@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
-import styles from "./profile.module.css";
+import styles from "../../styles/profile.module.css";
 import ordersImage from "../../public/media/active_orders.png";
 import Image from "next/image";
 import { useState } from "react";

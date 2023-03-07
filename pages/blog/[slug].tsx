@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Layout } from "../../components/layout/layout";
 import noimage from "../../public/media/noimage.jpg";
-import styles from "./blog.module.css";
+import styles from "../../styles/blog.module.css";
 import ads from "../../public/media/ads.png";
 import { Location } from "../../components/utils/location/location";
 import { useEffect, useState } from "react";

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Logout } from "./index";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
-import styles from "./profile.module.css";
+import styles from "../../styles/profile.module.css";
 import { Location } from "../../components/utils/location/location";
 import { arrowRight } from "../../public/icons";
 import { MiniFullBanner } from "../../components/banners/minifull/minifull";

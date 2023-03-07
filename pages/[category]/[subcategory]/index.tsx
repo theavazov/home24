@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { arrowRight, grid4, grid9 } from "../../../public/icons";
 import { Layout } from "../../../components/layout/layout";
-import styles from "./subcategories.module.css";
 import { Location } from "../../../components/utils/location/location";
 import { MiniFullBanner } from "../../../components/banners/minifull/minifull";
 
@@ -28,34 +27,6 @@ export default function SubcategoryPage() {
                 }}
               >
                 <Location location={"Геймерские кресла"} />
-                <div className={styles.grid_btn_div}>
-                  {/* <button
-                    onClick={() => setIsGrid(!isGrid)}
-                    className={isGrid ? "" : styles.active}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      display: "grid",
-                      placeItems: "center",
-                      cursor: "pointer",
-                    }}
-                  >
-                    {grid9}
-                  </button>
-                  <button
-                    onClick={() => setIsGrid(!isGrid)}
-                    className={isGrid ? styles.active : ""}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      display: "grid",
-                      placeItems: "center",
-                      cursor: "pointer",
-                    }}
-                  >
-                    {grid4}
-                  </button> */}
-                </div>
               </div>
             </div>
           </div>

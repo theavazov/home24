@@ -4,7 +4,7 @@ import dostavka from "../../../../public/media/dostavka.png";
 import assistent from "../../../../public/media/expert.png";
 import { Layout } from "../../../../components/layout/layout";
 import ProductTab from "../../../../components/ProductInner/ProductTab/ProductTab";
-import styles from "./product.module.css";
+import styles from "../../../../styles/product.module.css";
 import Image from "next/image";
 import ProductSwiper from "../../../../components/ProductInner/ProductSwiper/ProductSwiper";
 import { useRouter } from "next/router";

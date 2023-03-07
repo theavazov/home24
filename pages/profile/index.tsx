@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { arrowRight, bell, cart, edit, swap } from "../../public/icons";
 import { Layout } from "../../components/layout/layout";
 import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
-import styles from "./profile.module.css";
+import styles from "../../styles/profile.module.css";
 import logo from "../../public/media/logo.png";
 import { useRouter } from "next/router";
 import { Location } from "../../components/utils/location/location";
