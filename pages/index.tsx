@@ -20,6 +20,7 @@ import { PopularProductsSection } from "../components/universal/popular/popular"
 import { getBlogs } from "../server/blog";
 import { BlogCard } from "../components/cards/blog/blog";
 import { getAds } from "../server/banner";
+import { AdsCard, AdsLoaderCard } from "../components/cards/ads/ads";
 
 export default function Home() {
   return (
@@ -153,7 +154,22 @@ const AdsSection = () => {
 
   return (
     <section className="section">
-      <div className={`container ${styles.ads_container}`}></div>
+      {isLoading ? (
+        <div className={`container ${styles.ads_container}`}>
+          <AdsLoaderCard />
+          <AdsLoaderCard />
+          <AdsLoaderCard />
+          <AdsLoaderCard />
+        </div>
+      ) : (
+        <div className={`container ${styles.ads_container}`}>
+          {ads.length > 0
+            ? ads.map((ad: any, i: number) => {
+                return <AdsCard key={i} content={ad} />;
+              })
+            : null}
+        </div>
+      )}
     </section>
   );
 };
