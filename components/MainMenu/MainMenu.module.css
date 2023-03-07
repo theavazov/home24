@@ -1,14 +1,14 @@
 .mainMenu {
   position: absolute;
-  top: 128px;
+  top: 130px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 128px);
+  height: calc(100vh - 130px);
   background-color: var(--white);
-  z-index: -1;
   transform: translateY(-160%);
   transition: 0.5s;
   max-height: 840px;
+  z-index: -1;
 }
 
 .mainMenu.show {

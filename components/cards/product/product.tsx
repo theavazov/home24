@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./product.module.css";
-import kreslo from "../../../public/media/kresl-ofis.png";
 import { cart, heart, star } from "../../../public/icons";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { OrderContext } from "../../../contexts/orders";
 
 type Props = {
   product: any;
@@ -11,6 +12,28 @@ type Props = {
 
 export default function ProductCard({ product }: Props) {
   const { locale } = useRouter();
+  const { orders, setOrders } = useContext(OrderContext);
+
+  const saveStorage = () => {
+    let ordersArray = [...orders];
+    if (ordersArray && ordersArray.length) {
+      let order = ordersArray.find((e) => {
+        if (e.id == product.id) {
+          e.count = e.count + 1;
+          return e;
+        }
+      });
+      if (!order) {
+        product.count = 1;
+        ordersArray.push(product);
+      }
+    } else {
+      product.count = 1;
+      ordersArray.push(product);
+    }
+    setOrders(ordersArray);
+    localStorage.setItem("orders", JSON.stringify(ordersArray));
+  };
 
   const name =
     locale === "ru"
@@ -22,7 +45,7 @@ export default function ProductCard({ product }: Props) {
       : "";
 
   return (
-    <Link href="/dynamic/gamer/kreslo" className={styles.product}>
+    <div className={styles.product}>
       <div className={styles.product_img}>
         <div className={styles.heart}>{heart}</div>
         <Image
@@ -30,6 +53,7 @@ export default function ProductCard({ product }: Props) {
           alt={name}
           width={250}
           height={340}
+          priority
         />
       </div>
       <div className={styles.product_info}>
@@ -38,7 +62,11 @@ export default function ProductCard({ product }: Props) {
             <p className={styles.current_pice}>{product?.price}</p>
             <p className={styles.old_pice}>6 500 000 сум</p>
           </div>
-          <button type="button" className={styles.cart_btn}>
+          <button
+            type="button"
+            className={styles.cart_btn}
+            onClick={saveStorage}
+          >
             {cart}
           </button>
         </div>
@@ -48,6 +76,6 @@ export default function ProductCard({ product }: Props) {
         </div>
         <p className={styles.info_desc}>{name}</p>
       </div>
-    </Link>
+    </div>
   );
 }

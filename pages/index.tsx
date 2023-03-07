@@ -1,9 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
+import styles from "../styles/main.module.css";
 import Herobanner from "../components/Home/HeroBanner/HeroBanner";
 import { Layout } from "../components/layout/layout";
-import styles from "../styles/home.module.css";
-import blogImage from "../media/blog-image.jpeg";
 import { CategoryCard } from "../components/cards/category/category";
 import { useContext, useEffect, useState } from "react";
 import { CustomHead } from "../components/layout/head";
@@ -22,6 +19,7 @@ import { BestsellersSection } from "../components/universal/bestseller/bestselle
 import { PopularProductsSection } from "../components/universal/popular/popular";
 import { getBlogs } from "../server/blog";
 import { BlogCard } from "../components/cards/blog/blog";
+import { getAds } from "../server/banner";
 
 export default function Home() {
   return (
@@ -32,6 +30,7 @@ export default function Home() {
         <CategoriesSection />
         <BestsellersSection />
         <PopularProductsSection />
+        <AdsSection />
         <BrandsSection />
         <FullBanner />
         <BlogsSection />
@@ -133,6 +132,28 @@ const BrandsSection = () => {
           </div>
         )}
       </div>
+    </section>
+  );
+};
+
+const AdsSection = () => {
+  const [ads, setAds] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    getAds(4)
+      .then((res) => {
+        console.log(res.data);
+        setAds(res.data);
+        setIsLoading(false);
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
+  return (
+    <section className="section">
+      <div className={`container ${styles.ads_container}`}></div>
     </section>
   );
 };

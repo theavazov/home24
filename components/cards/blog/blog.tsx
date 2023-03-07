@@ -5,8 +5,6 @@ import noimage from "../../../public/media/noimage.jpg";
 import { useRouter } from "next/router";
 
 export function BlogCard({ blog }: { blog: any }) {
-  console.log(blog);
-
   const { locale } = useRouter();
 
   const title =
@@ -22,7 +20,7 @@ export function BlogCard({ blog }: { blog: any }) {
     <Link href={`/blog/${blog.slug}`} className={styles.card}>
       <p>{title}</p>
       <Image
-        src={noimage}
+        src={blog.lg_img ? blog.lg_img : noimage}
         alt={title}
         width={390}
         height={280}

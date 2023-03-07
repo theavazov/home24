@@ -8,43 +8,37 @@ import { endpoint } from "../_app";
 import { Location } from "../../components/utils/location/location";
 import { BestsellersSection } from "../../components/universal/bestseller/bestseller";
 import { MiniFullBanner } from "../../components/banners/minifull/minifull";
+import { Aside } from "../../components/utils/aside/aside";
+import { CategoriesLoader } from "../../components/utils/loaders/loaders";
 
 export default function CategoryPage() {
   const router = useRouter();
-  const { slug } = router.query; // category
+  const { category } = router.query; // category
 
   const { categories, isLoading } = useContext(CategoriesContext);
 
   return (
     <>
       <CustomHead
-        title={`Home24 | category ${slug}`}
+        title={`Home24 | category ${category}`}
         desc={"desc"}
         canonical={endpoint}
       />
       <Layout>
         <section>
-          <div className="container main_flex_content">
-            <div id="mainContent" style={{ flex: "1 1 auto" }}>
+          <div className="container layout">
+            <Aside />
+            <div className="main_content">
               <Location location={"Мебель"} />
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(5, 1fr)",
-                  gap: "24px",
-                  marginTop: "32px",
-                }}
-              >
-                {isLoading ? (
-                  <p>Loading...</p>
-                ) : (
-                  categories.map((category: any, i: number) => {
-                    return (
-                      <CategoryCard key={i} category={category} parent={slug} />
-                    );
-                  })
-                )}
-              </div>
+              {isLoading ? (
+                <CategoriesLoader customClass={"inner_container"} />
+              ) : (
+                <div className="inner_container">
+                  {categories.map((category: any, i: number) => {
+                    return <CategoryCard key={i} category={category} />;
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </section>

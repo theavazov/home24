@@ -1,5 +1,9 @@
 import styles from "./loaders.module.css";
 
+type Props = {
+  customClass?: string | any;
+};
+
 export function BrandsLoader() {
   return (
     <div className="container brands_container">
@@ -13,9 +17,9 @@ export function BrandsLoader() {
   );
 }
 
-export function CategoriesLoader() {
+export function CategoriesLoader({ customClass }: Props) {
   return (
-    <div className="categories_container">
+    <div className={customClass ? customClass : "categories_container"}>
       <div className={`skeleton ${styles.category}`}></div>
       <div className={`skeleton ${styles.category}`}></div>
       <div className={`skeleton ${styles.category}`}></div>

@@ -20,8 +20,11 @@ import {
   location,
   search,
   telegram,
+  chevron,
+  sale,
 } from "../../../public/icons";
 import { SearchContext } from "../../../contexts/search";
+import { CategoriesContext } from "../../../contexts/categories";
 
 export function Header({
   isCatalogue,
@@ -55,6 +58,10 @@ export function Header({
       isActive: pathname === "/cart" ? true : false,
     },
   ];
+
+  const { categories, isLoading } = useContext(CategoriesContext);
+
+  const navCategories = categories.slice(0, 6);
 
   // useEffect(() => {
   //   const storageUser = JSON.parse(localStorage.getItem("user"));
@@ -218,6 +225,52 @@ export function Header({
           </div>
         </div>
       </div>
+      <nav className={`container ${styles.header_bottom}`}>
+        {isLoading ? (
+          <>
+            <p className={`skeleton ${styles.tipa_bottom_item}`}></p>
+            <p className={`skeleton ${styles.tipa_bottom_item}`}></p>
+            <p className={`skeleton ${styles.tipa_bottom_item}`}></p>
+            <p className={`skeleton ${styles.tipa_bottom_item}`}></p>
+            <p className={`skeleton ${styles.tipa_bottom_item}`}></p>
+            <p className={`skeleton ${styles.tipa_bottom_item}`}></p>
+          </>
+        ) : (
+          navCategories.map((category: any, i: number) => {
+            const name =
+              locale === "ru"
+                ? category?.name.ru
+                : locale === "uz"
+                ? category?.name.uz
+                : locale === "en"
+                ? category?.name.en
+                : "";
+
+            return (
+              <Link
+                key={i}
+                href={`/${category.slug}`}
+                className={styles.bottom_nav_item}
+              >
+                {name}
+              </Link>
+            );
+          })
+        )}
+        <Link href={`/discounts`} className={styles.bottom_nav_item}>
+          {sale} Акции
+        </Link>
+        <button
+          className={
+            isCatalogue
+              ? `${styles.bottom_nav_item} ${styles.active}`
+              : styles.bottom_nav_item
+          }
+          onClick={() => setIsCatalogue(true)}
+        >
+          Ещё {chevron}
+        </button>
+      </nav>
       <div className={styles.mobile_header}>
         <div className={styles.mobile_top}>
           <Link className={styles.logo} href="/">

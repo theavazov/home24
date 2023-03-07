@@ -9,6 +9,7 @@
   transition: 0.3s !important;
   border-radius: 8px;
   overflow: hidden;
+  min-height: 275px;
 }
 
 .category_img {
@@ -32,6 +33,11 @@
   line-height: 28px;
   color: currentColor;
   text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .category:hover {

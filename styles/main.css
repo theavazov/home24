@@ -92,13 +92,24 @@ p {
   min-height: 100vh;
 }
 
+.hidden {
+  display: none;
+}
+
+.test {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  padding-top: 32px;
+}
+
 .main {
   flex: 1 1 auto;
-  padding-top: calc(128px + 32px);
+  padding-top: calc(175px + 32px);
 }
 
 .main.index {
-  padding-top: 128px;
+  padding-top: 175px;
 }
 
 .container {
@@ -160,11 +171,19 @@ p {
   max-width: 250px;
   width: 100%;
   border: 1px solid blue;
+  position: relative;
 }
 
 .main_content {
   width: 100%;
   border: 1px solid red;
+}
+
+.inner_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-top: 32px;
 }
 
 .section {

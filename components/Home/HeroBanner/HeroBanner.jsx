@@ -4,13 +4,15 @@ import { Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { ProductOfTheDayBanner } from "../../banners/products/products";
 
 export default function Herobanner() {
   return (
     <section className={styles.herobanner_section}>
       <div className={`${styles.herobanner_inner} container`}>
         <MainBanner />
-        <ProductOfTheDay />
+        <ProductOfTheDayBanner />
+        {/* <ProductOfTheDay /> */}
       </div>
     </section>
   );
