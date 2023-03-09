@@ -87,6 +87,41 @@ export function ProductOfTheDayBanner() {
                         </div>
                       </div>
                     </div>
+                    <div className={styles.mobilecard}>
+                      <div className={styles.card_top}>
+                        <h4 className={styles.card_header}>товар дня</h4>
+                        <button className={styles.card_wishes}>{heart}</button>
+                      </div>
+                      <div className={styles.mobilecard_content}>
+                        <div className={styles.mobilecard_img}>
+                          <div className={styles.discount_wrapper}>
+                            <p className={styles.discount_text}>Cкидка</p>
+                            <p className={styles.discount_number}>-90%</p>
+                          </div>
+                          <Image
+                            src={product?.images[0].lg_img}
+                            alt={name}
+                            width={50}
+                            height={86}
+                          />
+                        </div>
+                        <div>
+                          <p className={styles.card_name}>{name}</p>
+                          <div className={styles.card_prices}>
+                            <p className={styles.card_price}>1.240.000 сум</p>
+                            <p className={styles.card_discount_price}>
+                              1.500.000
+                            </p>
+                          </div>
+                          <p className={styles.card_rating}>
+                            {star} {product?.info.stars}
+                          </p>
+                        </div>
+                      </div>
+                      <button className={styles.add_cart}>
+                        {bag} в кoрзину
+                      </button>
+                    </div>
                   </SwiperSlide>
                 );
               })
