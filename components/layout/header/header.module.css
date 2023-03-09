@@ -468,10 +468,14 @@ button.bottom_nav_item svg {
 }
 
 @media (max-width: 880px) {
+  .header {
+    height: auto;
+  }
   .mobile_header {
     display: flex;
   }
-  .header_inner {
+  .header_inner,
+  .header_bottom {
     display: none;
   }
 }

@@ -33,7 +33,7 @@ export default function Brands() {
             {isLoading ? (
               <BrandsLoader />
             ) : (
-              <div className="container brands_container">
+              <div className="brands_container">
                 {brands.length > 0
                   ? brands.map((brand: any, i: number) => {
                       return <BrandCard key={i} brand={brand} />;

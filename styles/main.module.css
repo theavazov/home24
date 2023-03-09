@@ -1,5 +1,33 @@
+.intro {
+  background-color: var(--bg-gray);
+}
+
+.intro_inner {
+  display: flex;
+  gap: 24px;
+  padding-block: 40px;
+}
+
 .ads_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+}
+
+@media (max-width: 1800px) {
+  .ads_container {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 880px) {
+  .intro_inner {
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 20px;
+  }
+  .ads_container {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 }

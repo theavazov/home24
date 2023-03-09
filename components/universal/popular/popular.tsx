@@ -11,7 +11,7 @@ export function PopularProductsSection() {
 
   useEffect(() => {
     setIsLoading(true);
-    getPopularProducts()
+    getPopularProducts("12")
       .then((res) => {
         setProducts(res.data);
         setIsLoading(false);

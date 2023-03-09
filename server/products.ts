@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function getPopularProducts() {
+export async function getPopularProducts(limit: string) {
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_ENDPOINT}/products?type=popular`
+    `${process.env.NEXT_PUBLIC_ENDPOINT}/products?type=popular&limit=${limit}`
   );
 
   const data = await res.data.products;
@@ -10,9 +10,9 @@ export async function getPopularProducts() {
   return data;
 }
 
-export async function getBestsellerProducts() {
+export async function getBestsellerProducts(limit: string) {
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_ENDPOINT}/products?type=bestsellers`
+    `${process.env.NEXT_PUBLIC_ENDPOINT}/products?type=bestsellers&limit=${limit}`
   );
 
   const data = await res.data.products;

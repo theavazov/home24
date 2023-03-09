@@ -40,3 +40,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width: 880px) {
+  .card {
+    height: 125px;
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .card p {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}

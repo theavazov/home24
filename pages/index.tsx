@@ -1,5 +1,4 @@
 import styles from "../styles/main.module.css";
-import Herobanner from "../components/Home/HeroBanner/HeroBanner";
 import { Layout } from "../components/layout/layout";
 import { CategoryCard } from "../components/cards/category/category";
 import { useContext, useEffect, useState } from "react";
@@ -21,24 +20,45 @@ import { getBlogs } from "../server/blog";
 import { BlogCard } from "../components/cards/blog/blog";
 import { getAds } from "../server/banner";
 import { AdsCard, AdsLoaderCard } from "../components/cards/ads/ads";
+import { PromoBanner } from "../components/banners/promo/promo";
+import { getFeedbacks } from "../server/feedbacks";
+import { ProductOfTheDayBanner } from "../components/banners/products/products";
+import { MainBanner } from "../components/banners/main/main";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function Home() {
   return (
     <>
       <CustomHead title={"Home 24"} desc={"desc"} canonical={endpoint} />
       <Layout>
-        <Herobanner />
+        <IntroSection />
         <CategoriesSection />
         <BestsellersSection />
+        <PromoBanner />
         <PopularProductsSection />
         <AdsSection />
         <BrandsSection />
+        <FeedbacksSection />
         <FullBanner />
         <BlogsSection />
       </Layout>
     </>
   );
 }
+
+const IntroSection = () => {
+  return (
+    <section className={styles.intro}>
+      <div className={`container ${styles.intro_inner}`}>
+        <MainBanner />
+        <ProductOfTheDayBanner />
+      </div>
+    </section>
+  );
+};
 
 const CategoriesSection = () => {
   const { categories, isLoading } = useContext(CategoriesContext);
@@ -145,7 +165,6 @@ const AdsSection = () => {
     setIsLoading(true);
     getAds(4)
       .then((res) => {
-        console.log(res.data);
         setAds(res.data);
         setIsLoading(false);
       })
@@ -162,14 +181,53 @@ const AdsSection = () => {
           <AdsLoaderCard />
         </div>
       ) : (
-        <div className={`container ${styles.ads_container}`}>
-          {ads.length > 0
-            ? ads.map((ad: any, i: number) => {
-                return <AdsCard key={i} content={ad} />;
-              })
-            : null}
+        <div className="container ads">
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            spaceBetween={24}
+            slidesPerView={"auto"}
+            loop={true}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              880: { slidesPerView: 3 },
+              1200: { slidesPerView: 4, pagination: false },
+            }}
+          >
+            {ads.length > 0
+              ? ads.map((ad: any, i: number) => {
+                  return (
+                    <SwiperSlide key={i}>
+                      <AdsCard content={ad} />
+                    </SwiperSlide>
+                  );
+                })
+              : null}
+          </Swiper>
         </div>
       )}
+    </section>
+  );
+};
+
+const FeedbacksSection = () => {
+  const [feedbacks, setFeedbacks] = useState<object[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    getFeedbacks()
+      .then((res) => {
+        setFeedbacks(res.data);
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
+  return (
+    <section className="section">
+      <div className="container section_inner">
+        <SectionInfo title={"Фото довольных клиентов"} />
+      </div>
     </section>
   );
 };

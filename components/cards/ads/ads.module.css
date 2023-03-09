@@ -8,3 +8,11 @@
   border: 1px solid #f2f2fa;
   overflow: hidden;
 }
+
+@media (max-width: 880px) {
+  .loader,
+  .card {
+    height: 145px;
+    border-radius: 12px;
+  }
+}

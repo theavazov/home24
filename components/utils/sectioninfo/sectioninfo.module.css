@@ -15,3 +15,17 @@
   color: #ff6418;
   text-decoration: underline !important;
 }
+
+@media (max-width: 880px) {
+  .info {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .more_link {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
+}
