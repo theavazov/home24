@@ -1,16 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { Logout } from "./index";
 import { Layout } from "../../components/layout/layout";
-import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
 import styles from "../../styles/profile.module.css";
 import { Location } from "../../components/utils/location/location";
 import { arrowRight } from "../../public/icons";
 import { MiniFullBanner } from "../../components/banners/minifull/minifull";
+import ProfileNav from "../../components/universal/sidebar/sidebar";
 
 export default function Edit() {
   const [isLogout, setIsLogout] = useState(false);
+
   return (
     <>
       <Head>
@@ -29,7 +29,7 @@ export default function Edit() {
         <section>
           <div className="container">
             <div className={styles.main_content}>
-              <ProfileNav setIsLogout={setIsLogout} />
+              <ProfileNav />
               <div className={styles.profile_grid}>
                 <Link
                   href="/profile"
@@ -201,7 +201,6 @@ export default function Edit() {
           </div>
         </section>
         <MiniFullBanner />
-        {isLogout && <Logout setIsLogout={setIsLogout} />}
       </Layout>
     </>
   );

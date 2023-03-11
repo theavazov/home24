@@ -4,7 +4,7 @@ import styles from "./product.module.css";
 import { cart, heart, star } from "../../../public/icons";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import { OrderContext } from "../../../contexts/orders";
+import { ContentContext } from "../../../contexts/content";
 
 type Props = {
   product: any;
@@ -12,7 +12,7 @@ type Props = {
 
 export default function ProductCard({ product }: Props) {
   const { locale } = useRouter();
-  const { orders, setOrders } = useContext(OrderContext);
+  const { orders, setOrders } = useContext(ContentContext);
 
   const saveStorage = () => {
     let ordersArray = [...orders];
@@ -49,7 +49,7 @@ export default function ProductCard({ product }: Props) {
       <div className={styles.product_img}>
         <div className={styles.heart}>{heart}</div>
         <Image
-          src={product?.images[0]?.lg_img}
+          src={product?.images[0]?.md_img}
           alt={name}
           width={250}
           height={340}

@@ -1,14 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "../../components/layout/layout";
-import ProfileNav from "../../components/Profile/NavBar/ProfileNav";
 import styles from "../../styles/profile.module.css";
 import ordersImage from "../../public/media/active_orders.png";
 import Image from "next/image";
 import { useState } from "react";
-import { Logout } from "./index";
 import { Location } from "../../components/utils/location/location";
 import { MiniFullBanner } from "../../components/banners/minifull/minifull";
+import ProfileNav from "../../components/universal/sidebar/sidebar";
 
 export default function Orders() {
   const [isLogout, setIsLogout] = useState(false);
@@ -30,7 +29,7 @@ export default function Orders() {
         <section>
           <div className="container">
             <div className={styles.main_content}>
-              <ProfileNav setIsLogout={setIsLogout} />
+              <ProfileNav />
               <div className={styles.profile_grid}>
                 <EmptyOrders />
               </div>
@@ -41,7 +40,6 @@ export default function Orders() {
           </div>
         </section>
         <MiniFullBanner />
-        {isLogout && <Logout setIsLogout={setIsLogout} />}
       </Layout>
     </>
   );

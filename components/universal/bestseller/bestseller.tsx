@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getBestsellerProducts } from "../../../server/products";
 import ProductCard from "../../cards/product/product";
@@ -6,6 +7,7 @@ import { SectionInfo } from "../../utils/sectioninfo/sectioninfo";
 import styles from "./bestseller.module.css";
 
 export function BestsellersSection() {
+  const { locale } = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [products, setProducts] = useState<any>([]);
 
@@ -17,7 +19,7 @@ export function BestsellersSection() {
         setIsLoading(false);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <section className="section">

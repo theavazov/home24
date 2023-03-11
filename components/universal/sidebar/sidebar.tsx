@@ -1,20 +1,21 @@
 import Link from "next/link";
-import styles from "./ProfileNav.module.css";
+import styles from "./sidebar.module.css";
 import { login, cart, logout } from "../../../public/icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export default function ProfileNav({ setIsLogout }) {
-  const router = useRouter();
+export default function ProfileNav() {
+  const { pathname } = useRouter();
   useEffect(() => {
-    if (router.pathname == "/profile/orders") {
+    if (pathname == "/profile/orders") {
       setStateNumber(1);
-    } else if (router.pathname == "/profile") {
+    } else if (pathname == "/profile") {
       setStateNumber(2);
-    } else if (router.pathname == "/profile/edit") {
+    } else if (pathname == "/profile/edit") {
       setStateNumber(2);
     }
-  }, [router.pathname]);
+  }, [pathname]);
+
   const [stateNumber, setStateNumber] = useState(1);
   return (
     <aside className={styles.profileNav}>
@@ -40,7 +41,7 @@ export default function ProfileNav({ setIsLogout }) {
         <div className={styles.icon_div}>{login}</div>
         <p>Профиль</p>
       </Link>
-      <button className={styles.profile_link} onClick={() => setIsLogout(true)}>
+      <button className={styles.profile_link}>
         <div className={styles.icon_div}>{logout}</div>
         <p>Выйти</p>
       </button>

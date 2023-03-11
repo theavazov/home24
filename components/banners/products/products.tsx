@@ -22,7 +22,7 @@ export function ProductOfTheDayBanner() {
         setIsLoading(false);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <div className={styles.swiper}>
@@ -40,7 +40,6 @@ export function ProductOfTheDayBanner() {
         >
           {products.length > 0
             ? products.map((product: any, i: number) => {
-                console.log(product);
                 const name =
                   locale === "ru"
                     ? product?.info?.name.ru
@@ -99,7 +98,7 @@ export function ProductOfTheDayBanner() {
                             <p className={styles.discount_number}>-90%</p>
                           </div>
                           <Image
-                            src={product?.images[0].lg_img}
+                            src={product?.images[0].sm_img}
                             alt={name}
                             width={50}
                             height={86}

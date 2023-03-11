@@ -23,19 +23,19 @@ export function CategoryCard({ category, parent }: Props) {
 
   return (
     <Link
-      href={parent ? `/${parent}/subcategory` : "/slug"}
+      href={parent ? `/${parent}/${category?.slug}` : category?.slug}
       className={styles.category}
     >
       <div className={styles.category_img}>
         <Image
-          src={category.lg_img ? category.lg_img : noimage}
-          alt={title}
+          src={category.sm_img ? category.sm_img : noimage}
+          alt={title ? title : "Category"}
           width={200}
           height={150}
         />
       </div>
       <div className={styles.category_content}>
-        <p className={styles.category_name}>{title}</p>
+        <p className={styles.category_name}>{title ? title : "Category"}</p>
       </div>
     </Link>
   );

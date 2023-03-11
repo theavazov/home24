@@ -1,10 +1,11 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { arrowRight, grid4, grid9 } from "../../../public/icons";
 import { Layout } from "../../../components/layout/layout";
 import { Location } from "../../../components/utils/location/location";
 import { MiniFullBanner } from "../../../components/banners/minifull/minifull";
+import { Aside } from "../../../components/utils/aside/aside";
+import { MiddleText } from "../../../components/universal/text/text";
 
 export default function SubcategoryPage() {
   const router = useRouter();
@@ -17,20 +18,23 @@ export default function SubcategoryPage() {
       </Head>
       <Layout>
         <section>
-          <div className="container main_flex_content">
-            <div id="mainContent" style={{ flex: "1 1 auto" }}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  justifyContent: "space-between",
-                }}
-              >
-                <Location location={"Геймерские кресла"} />
-              </div>
+          <div className="container layout">
+            <Aside />
+            <div className="main_content">
+              <Location location={"Gamer kreslo"} />
+              {/* {isLoading ? (
+                <CategoriesLoader customClass={"inner_container"} />
+              ) : (
+                <div className="inner_container">
+                  {subcategories.map((subcategory: any, i: number) => {
+                    return <CategoryCard key={i} category={subcategory} />;
+                  })}
+                </div>
+              )} */}
             </div>
           </div>
         </section>
+        <MiddleText />
         <MiniFullBanner />
       </Layout>
     </>

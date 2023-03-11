@@ -1,22 +1,17 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../contexts/UserContext";
-import { bag, grid4, heart, home, login } from "../../public/icons";
-import styles from "./Menu.module.css";
+import { bag, grid4, heart, home, login } from "../../../public/icons";
+import styles from "./menu.module.css";
 
-export default function Menu({ isCatalogue, setIsCatalogue }) {
+type Props = {
+  isCatalogue: boolean;
+  setIsCatalogue: Function;
+};
+
+export default function Menu({ isCatalogue, setIsCatalogue }: Props) {
   const router = useRouter();
   const pathname = router.pathname;
 
-  const { user } = useContext(UserContext);
-  const [isUser, setIsUser] = useState(false);
-  useEffect(() => {
-    const storageUser = JSON.parse(localStorage.getItem("user"));
-    if (storageUser !== null) {
-      setIsUser(true);
-    }
-  }, []);
   return (
     <div className={styles.menu}>
       <div className={styles.menu_inner}>
@@ -80,32 +75,3 @@ export default function Menu({ isCatalogue, setIsCatalogue }) {
     </div>
   );
 }
-
-const UserLink = ({ pathname }) => {
-  return (
-    <Link
-      href="/profile"
-      className={
-        pathname == "/profile"
-          ? `${styles.menu_item} ${styles.active}`
-          : styles.menu_item
-      }
-    >
-      {login}
-      <p>Профиль</p>
-    </Link>
-  );
-};
-
-const ModalOpener = ({ setIsModal }) => {
-  return (
-    <div
-      role={"button"}
-      onClick={() => setIsModal(true)}
-      className={styles.menu_item}
-    >
-      {login}
-      <p>Войти</p>
-    </div>
-  );
-};

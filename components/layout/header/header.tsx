@@ -3,9 +3,7 @@ import logo from "../../../public/media/logo.png";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../../contexts/UserContext";
-import MainMenu from "../../MainMenu/MainMenu";
+import { useContext, useState } from "react";
 import uz from "../../../public/media/uz.png";
 import ru from "../../../public/media/ru.png";
 import en from "../../../public/media/en.png";
@@ -25,6 +23,7 @@ import {
 } from "../../../public/icons";
 import { SearchContext } from "../../../contexts/search";
 import { CategoriesContext } from "../../../contexts/categories";
+import { Catalogue } from "../../universal/catalogue/catalogue";
 
 export function Header({
   isCatalogue,
@@ -63,18 +62,16 @@ export function Header({
 
   const navCategories = categories.slice(0, 6);
 
-  // useEffect(() => {
-  //   const storageUser = JSON.parse(localStorage.getItem("user"));
-  //   if (storageUser !== null) {
-  //     setIsUser(true);
-  //   }
-  // }, []);
-
   return (
     <header className={styles.header}>
       <div className={styles.header_top_div}>
         <div className={`container ${styles.header_top_div_inner}`}>
-          <a href="#" className={styles.header_top_address}>
+          <a
+            href="#"
+            className={styles.header_top_address}
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <div className={styles.header_top_address_logo}>
               {location}
               <p>Город:</p>
@@ -82,17 +79,29 @@ export function Header({
             <p className={styles.underline}>Ташкент</p>
           </a>
           <nav className={styles.header_top_nav}>
-            <a href="#" className={styles.header_top_link}>
+            <a
+              href="#"
+              className={styles.header_top_link}
+              target={"_blank"}
+              rel="noreferrer"
+            >
               {instagram}
               <span>home24.uz</span>
             </a>
-            <a href="#" className={styles.header_top_link}>
+            <a
+              href="#"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.header_top_link}
+            >
               {telegram}
               <span>t.me/home24uz</span>
             </a>
             <a
               href="tel:+998712007002"
               className={styles.header_top_phone_number}
+              target={"_blank"}
+              rel="noreferrer"
             >
               +998 71 200 7 002
             </a>
@@ -354,7 +363,7 @@ export function Header({
           </div>
         </div>
       </div>
-      <MainMenu isCatalogue={isCatalogue} />
+      <Catalogue isCatalogue={isCatalogue} />
     </header>
   );
 }

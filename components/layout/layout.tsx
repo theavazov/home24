@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 import { ModalContext } from "../../contexts/modal";
-import Menu from "../Menu/Menu";
+import Menu from "../universal/menu/menu";
 import { Modal } from "../utils/modal/modal";
 import { Footer } from "./footer/footer";
 import { Header } from "./header/header";

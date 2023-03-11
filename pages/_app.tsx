@@ -4,12 +4,12 @@ import UserProvider from "../contexts/UserContext";
 import CategoriesContextProvider from "../contexts/categories";
 import ModalContextProvider from "../contexts/modal";
 import SearchContextProvider from "../contexts/search";
-import OrderContextProvider from "../contexts/orders";
+import ContentContextProvider from "../contexts/content";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <UserProvider>
-      <OrderContextProvider>
+      <ContentContextProvider>
         <ModalContextProvider>
           <SearchContextProvider>
             <CategoriesContextProvider>
@@ -17,7 +17,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             </CategoriesContextProvider>
           </SearchContextProvider>
         </ModalContextProvider>
-      </OrderContextProvider>
+      </ContentContextProvider>
     </UserProvider>
   );
 }

@@ -25,7 +25,7 @@ export function MainBanner() {
         setIsLoading(false);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <div className={styles.mainbanner}>
@@ -47,11 +47,11 @@ export function MainBanner() {
           {banners.map((slide: any, i: number) => {
             const banner =
               locale === "ru"
-                ? slide.lg_img.ru
+                ? slide.md_img.ru
                 : locale === "uz"
-                ? slide.lg_img.uz
+                ? slide.md_img.uz
                 : locale === "en"
-                ? slide.lg_img.en
+                ? slide.md_img.en
                 : "";
 
             return (

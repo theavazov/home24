@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { arrowRight } from "../../../public/icons";
+import { useTranslations } from "../../../translations/translations";
 import styles from "./location.module.css";
 
 type Props = {
@@ -23,12 +24,14 @@ export function Location({
   subcategory,
   products,
 }: Props) {
+  const { t } = useTranslations();
+
   return (
     <div className={styles.location}>
       <div className={styles.content}>
         <nav className={styles.location_nav}>
           <Link href={"/"} className={styles.node}>
-            Главная
+            {t?.main}
           </Link>
           <span className={styles.node}>{arrowRight}</span>
           {category ? (

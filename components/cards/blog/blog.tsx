@@ -20,7 +20,7 @@ export function BlogCard({ blog }: { blog: any }) {
     <Link href={`/blog/${blog.slug}`} className={styles.card}>
       <p>{title}</p>
       <Image
-        src={blog.lg_img ? blog.lg_img : noimage}
+        src={blog.sm_img ? blog.sm_img : noimage}
         alt={title}
         width={390}
         height={280}

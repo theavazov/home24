@@ -1,0 +1,25 @@
+.mainMenu {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 130px);
+  background-color: var(--white);
+  transform: translateY(-160%);
+  transition: 0.5s;
+  max-height: 840px;
+  z-index: -1;
+}
+
+.mainMenu.show {
+  transform: translateY(0%);
+  transition: 0.5s;
+  background-color: var(--white);
+}
+
+.mainMenu_inner {
+  padding-block: 24px;
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+}

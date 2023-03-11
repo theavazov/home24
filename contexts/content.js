@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 
-export const OrderContext = createContext();
+export const ContentContext = createContext();
 
-export default function OrderContextProvider(props) {
+export default function ContentContextProvider(props) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -15,8 +15,8 @@ export default function OrderContextProvider(props) {
   const value = { orders, setOrders };
 
   return (
-    <OrderContext.Provider value={value}>
+    <ContentContext.Provider value={value}>
       {props.children}
-    </OrderContext.Provider>
+    </ContentContext.Provider>
   );
 }

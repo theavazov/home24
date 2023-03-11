@@ -10,9 +10,9 @@ export function BrandCard({ brand }: { brand: any }) {
   return (
     <Link href={`/brands/${brand.slug}`} className={styles.card}>
       <div className={styles.image}>
-        {brand.lg_logo ? (
+        {brand.sm_logo ? (
           <Image
-            src={brand.lg_logo}
+            src={brand.sm_logo}
             alt={brand.name ? brand.name : "brand"}
             className={styles.card_img}
             width={150}

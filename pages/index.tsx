@@ -28,6 +28,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useRouter } from "next/router";
 
 export default function Home() {
   return (
@@ -84,6 +85,7 @@ const CategoriesSection = () => {
 };
 
 const BlogsSection = () => {
+  const { locale } = useRouter();
   const [blogs, setBlogs] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -95,7 +97,7 @@ const BlogsSection = () => {
         setIsLoading(false);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <section className="section">
@@ -121,6 +123,7 @@ const BlogsSection = () => {
 };
 
 const BrandsSection = () => {
+  const { locale } = useRouter();
   const [brands, setBrands] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -132,7 +135,7 @@ const BrandsSection = () => {
         setIsLoading(false);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <section className="section">
@@ -158,6 +161,7 @@ const BrandsSection = () => {
 };
 
 const AdsSection = () => {
+  const { locale } = useRouter();
   const [ads, setAds] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -169,7 +173,7 @@ const AdsSection = () => {
         setIsLoading(false);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <section className="section">
@@ -211,6 +215,7 @@ const AdsSection = () => {
 };
 
 const FeedbacksSection = () => {
+  const { locale } = useRouter();
   const [feedbacks, setFeedbacks] = useState<object[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -221,7 +226,7 @@ const FeedbacksSection = () => {
         setFeedbacks(res.data);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <section className="section">

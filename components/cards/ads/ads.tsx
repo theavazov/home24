@@ -8,11 +8,11 @@ export function AdsCard({ content }: { content: any }) {
 
   const image =
     locale === "ru"
-      ? content.lg_img.ru
+      ? content.md_img.ru
       : locale === "uz"
-      ? content.lg_img.uz
+      ? content.md_img.uz
       : locale === "en"
-      ? content.lg_img.en
+      ? content.md_img.en
       : "";
 
   return (

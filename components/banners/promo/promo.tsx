@@ -29,7 +29,7 @@ export function PromoBanner({ customClass }: Props) {
         setIsLoading(false);
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [locale]);
 
   return (
     <section className={customClass ? customClass : "section"}>
@@ -53,11 +53,11 @@ export function PromoBanner({ customClass }: Props) {
             banners.map((banner: any, i: number) => {
               const slide =
                 locale === "ru"
-                  ? banner.lg_img.ru
+                  ? banner.md_img.ru
                   : locale === "uz"
-                  ? banner.lg_img.uz
+                  ? banner.md_img.uz
                   : locale === "en"
-                  ? banner.lg_img.en
+                  ? banner.md_img.en
                   : "";
 
               return (
