@@ -29,3 +29,13 @@ export async function getProductsOfTheDay() {
 
   return data;
 }
+
+export async function getSingleProduct(slug: any) {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_ENDPOINT}/products/${slug}`
+  );
+
+  const data = await res.data;
+
+  return data;
+}

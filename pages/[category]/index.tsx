@@ -56,7 +56,13 @@ export default function CategoryPage() {
               ) : (
                 <div className="inner_container">
                   {subcategories.map((subcategory: any, i: number) => {
-                    return <CategoryCard key={i} category={subcategory} />;
+                    return (
+                      <CategoryCard
+                        key={i}
+                        category={subcategory}
+                        parent={category}
+                      />
+                    );
                   })}
                 </div>
               )}

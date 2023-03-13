@@ -45,7 +45,8 @@
   color: var(--main-orange) !important;
 }
 
-.secondary_btn svg {
+.secondary_btn svg,
+.primary_btn svg {
   max-width: 20px;
   width: 100%;
   height: 20px;

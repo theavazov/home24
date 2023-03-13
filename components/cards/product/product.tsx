@@ -45,7 +45,7 @@ export default function ProductCard({ product }: Props) {
       : "";
 
   return (
-    <div className={styles.product}>
+    <Link href={`/product/${product.slug}`} className={styles.product}>
       <div className={styles.product_img}>
         <div className={styles.heart}>{heart}</div>
         <Image
@@ -76,6 +76,6 @@ export default function ProductCard({ product }: Props) {
         </div>
         <p className={styles.info_desc}>{name}</p>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -1,49 +1,49 @@
 import { useState } from "react";
 import { star } from "../../../public/icons";
-import styles from "./ProductTab.module.css";
+import styles from "./tab.module.css";
 
-export default function ProductTab() {
-  const [toggleState, setToggleState] = useState(1);
+export function ProductTab() {
+  const [toggleState, setToggleState] = useState<string>("description");
 
   return (
     <div className={styles.productTab}>
       <div className={styles.buttons_div}>
         <button
           className={
-            toggleState === 1
+            toggleState === "description"
               ? `${styles.button} ${styles.active}`
               : styles.button
           }
-          onClick={() => setToggleState(1)}
+          onClick={() => setToggleState("description")}
         >
           Описание товара
         </button>
         <button
           className={
-            toggleState === 2
+            toggleState === "feedbacks"
               ? `${styles.button} ${styles.active}`
               : styles.button
           }
-          onClick={() => setToggleState(2)}
+          onClick={() => setToggleState("feedbacks")}
         >
           Отзывы (1)
         </button>
         <button
           className={
-            toggleState === 3
+            toggleState === "characteristics"
               ? `${styles.button} ${styles.active}`
               : styles.button
           }
-          onClick={() => setToggleState(3)}
+          onClick={() => setToggleState("characteristics")}
         >
           Характеристики
         </button>
       </div>
-      {toggleState === 1 ? (
+      {toggleState === "description" ? (
         <Opisaniye />
-      ) : toggleState === 2 ? (
+      ) : toggleState === "feedbacks" ? (
         <Otzivi />
-      ) : toggleState === 3 ? (
+      ) : toggleState === "characteristics" ? (
         <Xarakteristika />
       ) : (
         ""

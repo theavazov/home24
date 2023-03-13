@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./ProductSwiper.module.css";
+import styles from "./content.module.css";
 import kreslo from "../../../public/media/kreslo-gamer.png";
 import kresloOfis from "../../../public/media/kresl-ofis.png";
 import { chat, star } from "../../../public/icons";
@@ -94,7 +94,12 @@ const KeyValue = () => {
   );
 };
 
-const AsideSwiper = ({ src, setSrc }) => {
+type AsideSwiper = {
+  src: string | any;
+  setSrc: Function;
+};
+
+const AsideSwiper = ({ src, setSrc }: AsideSwiper) => {
   return (
     <div
       role={"button"}
@@ -110,7 +115,7 @@ const AsideSwiper = ({ src, setSrc }) => {
   );
 };
 
-const AsideSwiper2 = ({ src, setSrc }) => {
+const AsideSwiper2 = ({ src, setSrc }: AsideSwiper) => {
   return (
     <div
       role={"button"}
